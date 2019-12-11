@@ -113,18 +113,6 @@ paths:
         type: "string"
         name: "aboutMe"
         description: "AboutMe Information"
-      - in: "formData"
-        type: "string"
-        name: "twitterId"
-        description: "Twitter Id Information"
-      - in: "formData"
-        type: "string"
-        name: "facebookId"
-        description: "Facebook Id Information"
-      - in: "formData"
-        type: "string"
-        name: "githubId"
-        description: "Github Id Information"
       responses:
         200:
           description: "successful operation"
