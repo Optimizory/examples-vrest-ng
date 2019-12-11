@@ -1,4 +1,4 @@
-# Contacts Sample Test Application to demonstrate [vREST NG](https://ng.vrest.io).#
+# Contacts Sample Test Application to demonstrate [vREST NG](https://ng.vrest.io). #
 
 "Contacts" is a sample CRUD application built with with Backbone.js, Twitter Bootstrap, Node.js, Express, and MongoDB.
 
