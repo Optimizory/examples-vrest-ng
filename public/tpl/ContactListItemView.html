@@ -1,0 +1,61 @@
+<div class="ih-item square colored effect10 right_to_left">
+  <div class="front-view img">
+    <div class="row" style="margin-left:0;">
+      <div class="span11">
+        <div class="name-field"><%= name %></div>
+      </div>
+      <div class="span1">
+        <div class="switcher">
+        </div>
+      </div>
+    </div>
+    <div class="designation-field"><%= designation %></div>
+    <div class="email-field"><%= email %></div>
+    <div class="country-field"><%= country %></div>
+    <div class="social-links">
+      <ul class="inline">
+        <% if(linkedInId){ %>
+        <li>
+          <a class="btn social-link" href="https://in.linkedin.com/in/<%= linkedInId %>" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <% } %>
+        <% if(githubId){ %>
+        <li>
+          <a class="btn social-link" href="https://github.com/<%= githubId %>" target="_blank">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </li>
+        <% } %>
+        <% if(facebookId){ %>
+        <li>
+          <a class="btn social-link" href="https://facebook.com/<%= facebookId %>" target="_blank">
+            <i class="fa fa-facebook fa-2x"></i>
+          </a>
+        </li>
+        <% } %>
+        <% if(twitterId){ %>
+        <li>
+          <a class="btn social-link" href="https://twitter.com/<%= twitterId %>" target="_blank">
+            <i class="fa fa-twitter fa-2x"></i>
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="organization-field"><%= organization %></div>
+  </div>
+  <div class="back-view information">
+    <div class="row" style="margin-left:0;">
+      <div class="span11">
+        <h4><%= name %></h4>
+      </div>
+      <div class="span1">
+        <div class="switcher">
+        </div>
+      </div>
+    </div>
+    <p><%= aboutMe %></p>
+  </div>
+</div>

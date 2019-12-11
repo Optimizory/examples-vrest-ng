@@ -1,0 +1,16 @@
+{
+  "name": "vrest-contacts",
+  "description": "vREST Contacts Application",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.11.0",
+    "ejs": "2.5.5",
+    "mongodb": "2.2.19",
+    "underscore": "1.5.2"
+  },
+  "engines": {
+    "node": "0.8.4",
+    "npm": "1.1.49"
+  }
+}

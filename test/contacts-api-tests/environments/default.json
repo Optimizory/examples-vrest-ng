@@ -1,0 +1,6 @@
+{
+  "baseURL": "http://localhost:5090",
+  "validContactId": "5de0bf804e576dc4e5f4b984",
+  "invalidContactId": "507f1f77bcf86cd799439011",
+  "mongorestoreCmd": "mongorestore"
+}

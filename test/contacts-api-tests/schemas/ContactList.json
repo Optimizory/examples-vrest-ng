@@ -1,0 +1,7 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Contact"
+  },
+  "version": "swagger2.0"
+}

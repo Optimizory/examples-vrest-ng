@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "errors": {
+      "type": "object"
+    }
+  },
+  "version": "swagger2.0"
+}

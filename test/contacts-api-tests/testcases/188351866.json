@@ -1,0 +1,89 @@
+{
+  "details": {
+    "summary": "Create a new contact",
+    "description": "",
+    "condition": "",
+    "loopSource": "{{data}}",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "{{data.$.statusCode}}"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Validator"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      }
+    ],
+    "expectedBody": {
+      "content": "{{data.$.expectedBody}}",
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/definitions/{{data.$.expectedSchema}}"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "queryParams": [],
+    "body": {
+      "content": null,
+      "type": "form-urlencoded",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "{{data.$.name}}"
+        },
+        {
+          "name": "email",
+          "value": "{{data.$.email}}"
+        },
+        {
+          "name": "designation",
+          "value": "{{data.$.designation}}"
+        },
+        {
+          "name": "organization",
+          "value": "{{data.$.organization}}"
+        },
+        {
+          "name": "country",
+          "value": "{{data.$.country}}"
+        },
+        {
+          "name": "aboutMe",
+          "value": "{{data.$.aboutMe}}"
+        }
+      ]
+    }
+  },
+  "variables": [],
+  "extensions": {
+    "vrest-excel-plugin": {
+      "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact.csv"
+    },
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{mongorestoreCmd}} --drop --db contactdb {{$projectDir}}/dumps/contactdb"
+    }
+  }
+}

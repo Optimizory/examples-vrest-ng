@@ -1,0 +1,16 @@
+{
+  "allOf": [
+    {
+      "$ref": "#/definitions/ContactWithoutId"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "version": "swagger2.0"
+}

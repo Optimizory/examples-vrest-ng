@@ -1,0 +1,3 @@
+"iterationSummary","contactId","statusCode","expectedBody","expectedSchema"
+"Validate Delete API when contactId is invalid","{{invalidContactId}}","400","{""error"": ""Contact with id \""{{invalidContactId}}\"" not found.""}","GenericError"
+"Validate Delete API when contactId is valid","{{validContactId}}","200","{}","Contact"

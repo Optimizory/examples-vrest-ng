@@ -1,0 +1,30 @@
+<div>
+  <h3>Welcome to Contacts Application (version 1.0.0 - <%= instanceType %> Instance)</h3>
+  <p>
+    This application works as a test application to demonstrate <a target="_blank" href="https://ng.vrest.io">vREST NG</a> and <a target="_blank" href="https://vrest.io">vREST Cloud</a>. We will use vREST
+    to validate REST APIs of this application.
+
+    <h4>About this application</h4>
+    <p>
+      "Contacts" is a sample CRUD application built with Backbone.js, Twitter Bootstrap, Node.js, Express, and MongoDB.
+      The application allows you to browse through a list of contacts, as well as add, update, and delete contacts. The
+      application has the following schema with some validations:
+      <pre>
+            {
+                contact: {
+                    name: {type: String, required: true, maxLength: 35},
+                    email: {type: String},
+                    designation: {type: String, maxLength: 35},
+                    organization: {type: String, maxLength: 35},
+                    country: {type: String, maxLength: 35},
+                    aboutMe: {type: String},
+                    linkedInId: {type: String},
+                    githubId: {type: String},
+                    facebookId: {type: String},
+                    twitterId: {type: String}
+                }
+            }
+      </pre>
+    </p>
+  </p>
+</div>

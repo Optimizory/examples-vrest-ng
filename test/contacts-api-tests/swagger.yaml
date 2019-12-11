@@ -1,0 +1,186 @@
+swagger: "2.0"
+info:
+  description: 'This is a sample test application to demonstrate vREST NG and vREST Cloud.'
+  version: "1.0.0"
+  title: "vREST Contacts Application"
+  contact:
+    email: "dheeraj.aggarwal@optimizory.com"
+tags:
+- name: "CRUD APIs"
+  description: "CRUD APIs"
+paths:
+  /contacts:
+    post:
+      tags:
+      - "CRUD APIs"
+      summary: "Create a new contact"
+      description: ""
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "formData"
+        type: "string"
+        name: "name"
+        description: "Contact Name"
+      - in: "formData"
+        type: "string"
+        name: "email"
+        description: "Contact Email"
+      - in: "formData"
+        type: "string"
+        name: "designation"
+        description: "Contact Designation"
+      - in: "formData"
+        type: "string"
+        name: "organization"
+        description: "Organization Information"
+      - in: "formData"
+        type: "string"
+        name: "country"
+        description: "Country Information"
+      - in: "formData"
+        type: "string"
+        name: "aboutMe"
+        description: "AboutMe Information"
+      responses:
+        400:
+          description: "Invalid Input"
+          schema:
+            $ref: '#/definitions/Error'
+        200:
+          description: "Success Response"
+          schema: 
+            $ref: "#/definitions/Contact"
+  /contacts/{contactId}:
+    get:
+      tags:
+      - "CRUD APIs"
+      summary: "Find contact by id"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "ID of contact to return"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Contact"
+        400:
+          description: "Invalid Input"
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      tags:
+      - "CRUD APIs"
+      summary: "Update contact by id"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "ID of contact to update"
+        required: true
+        type: "string"
+      - in: "formData"
+        type: "string"
+        name: "name"
+        description: "Contact Name"
+      - in: "formData"
+        type: "string"
+        name: "email"
+        description: "Contact Email"
+      - in: "formData"
+        type: "string"
+        name: "designation"
+        description: "Contact Designation"
+      - in: "formData"
+        type: "string"
+        name: "organization"
+        description: "Organization Information"
+      - in: "formData"
+        type: "string"
+        name: "country"
+        description: "Country Information"
+      - in: "formData"
+        type: "string"
+        name: "aboutMe"
+        description: "AboutMe Information"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Contact"
+        400:
+          description: "Invalid Input"
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      tags:
+      - "CRUD APIs"
+      summary: "Delete contact by id"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "ID of contact to delete"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid Input"
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  ContactWithoutId:
+    type: "object"
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      designation:
+        type: string
+      organization:
+        type: string
+      country:
+        type: string
+      aboutMe:
+        type: string
+      twitterId:
+        type: string
+      facebookId:
+        type: string
+      githubId:
+        type: string
+  Contact:
+    allOf:
+      - $ref: '#/definitions/ContactWithoutId'
+      - type: object
+        properties:
+          _id:
+            type: "string"
+  ContactList:
+    type: "array"
+    items:
+      $ref: "#/definitions/Contact"
+  Error:
+    type: object
+    properties:
+      errors:
+        type: object
+  GenericError:
+    type: object
+    properties:
+      error:
+        type: "string"

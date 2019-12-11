@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Test Suite - CRUD APIs",
+    "description": "CRUD APIs",
+    "testCaseIds": [
+      "188351866",
+      "274032403",
+      "877416930",
+      "458296227"
+    ]
+  },
+  {
+    "name": "Test Suite 2",
+    "description": null,
+    "testCaseIds": []
+  },
+  {
+    "name": "Test Suite 3",
+    "description": null,
+    "testCaseIds": []
+  }
+]
