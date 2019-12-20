@@ -1,0 +1,17 @@
+image: node:9-alpine
+
+stages:
+  - test
+
+test:
+  stage: test
+  services:
+    - mongo:latest
+  script:
+    - npm i npm@latest -g
+    - npm i
+    - PORT=5080 DB=mongodb://mongo:27017/contactdb node server.js
+    - curl -s https://api.github.com/repos/Optimizory/vrest-ng-cli/releases/latest | grep "browser_download_url.*vrest_ng_cli_linux_.*" | cut -d ":" -f 2,3 | tr -d \" | wget -qi -
+    - fileName="$(find . -name "vrest_ng_cli*")"
+    - chmod +x $fileName
+    - $fileName run 

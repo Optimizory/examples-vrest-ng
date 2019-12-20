@@ -1,21 +1,18 @@
 var mongo = require('mongodb'),
   _ = require('underscore');
 
-var Server = mongo.Server,
-  Db = mongo.Db,
-  ObjectID = mongo.ObjectID;
+var MongoClient = mongo.MongoClient,
+  ObjectID = mongo.ObjectID,
+  db = null;
 
-var server = new Server('localhost', 27017, {
-  auto_reconnect: true
-});
-var dbName = process.env.DB || 'contactdb';
-db = new Db(dbName, server, {
-  safe: true
-});
-
-db.open(function (err, db) {
-  if (!err) {
-    console.log("Connected to '" + dbName + "' database");
+var connectionStr = process.env.DB || 'mongodb://localhost:27017/contactdb';
+MongoClient.connect(connectionStr, function(err, dbObj) {
+  if(err){
+    console.error("Error while connecting to database");
+    process.exit(1);
+  } else {
+    db = dbObj;
+    console.log("Connected to database");
     db.listCollections({name: 'contacts'}).next(function (err, collection) {
       if (!collection) {
         console.log("The 'contacts' collection doesn't exist. Creating it with sample data...");
