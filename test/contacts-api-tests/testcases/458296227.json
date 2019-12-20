@@ -55,7 +55,7 @@
       "testDataFilePath": "{{$projectDir}}/data/delete_contact_by_id.csv"
     },
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{mongorestoreCmd}} --drop --db contactdb {{$projectDir}}/dumps/contactdb"
+      "executionCommand": "{{mongorestoreCmd}} --drop --db contactdb \"{{$projectDir}}/dumps/contactdb\""
     }
   }
 }
