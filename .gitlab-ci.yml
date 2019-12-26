@@ -11,7 +11,7 @@ test:
     - npm i npm@latest -g
     - npm i
     - PORT=5080 DB=mongodb://mongo:27017/contactdb node server.js &
-    - apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
+    - apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget
     - wget -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.1/vrest_ng_cli_linux_1_0_1
     - fileName="$(find . -name "vrest_ng_cli*")"
     - chmod +x $fileName
