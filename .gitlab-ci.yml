@@ -16,4 +16,4 @@ test:
     - ls -ltr
     - chmod +x ./vrest_ng_cli
     - ls -ltr
-    - ${pwd}/vrest_ng_cli run
+    - $PWD/vrest_ng_cli run
