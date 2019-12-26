@@ -16,4 +16,4 @@ test:
     - ls -ltr
     - chmod u+x ./vrest_ng_cli
     - ls -ltr
-    - ./vrest_ng_cli run
+    - ./vrest_ng_cli run --projectdir=./test/contacts-api-tests
