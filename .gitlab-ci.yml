@@ -14,6 +14,6 @@ test:
     - apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget
     - wget -O vrest_ng_cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.1/vrest_ng_cli_linux_1_0_1
     - ls -ltr
-    - sudo chmod +x ./vrest_ng_cli
+    - chmod +x ./vrest_ng_cli
     - ls -ltr
-    - sudo vrest_ng_cli run 
+    - ./vrest_ng_cli run 
