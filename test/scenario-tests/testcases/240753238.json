@@ -1,0 +1,101 @@
+{
+  "details": {
+    "summary": "Validate whether List Contacts API is working fine or not",
+    "description": "This test case validates whether the List Contacts API is returning the valid records or not.\n\nResponse Validation: For response validation, we have chosen Default Validator. And in the expected body, we have ignored two dynamic properties \"_id\" and \"createdOn\".",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "positive"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": [
+        {
+          "_id": "{{*}}",
+          "name": "Lindsey Okelley",
+          "email": "lindsey.okelley@example.com",
+          "designation": "Product Evangelist",
+          "organization": "Example.com",
+          "country": "India",
+          "aboutMe": "This is about me section ...",
+          "linkedInId": "lindsey.okelley",
+          "githubId": "lindsey.okelley",
+          "facebookId": "lindsey.okelley",
+          "twitterId": "lindsey.okelley",
+          "createdOn": "{{*}}"
+        },
+        {
+          "_id": "{{*}}",
+          "name": "Lorette Cuffie",
+          "email": "lorette.cuffie@example.com",
+          "designation": "Software Engineer",
+          "organization": "Example.com",
+          "country": "US",
+          "aboutMe": "This is about me section ...",
+          "githubId": "",
+          "facebookId": "lorette.cuffie",
+          "twitterId": "lorette.cuffie",
+          "createdOn": "{{*}}"
+        },
+        {
+          "_id": "{{*}}",
+          "name": "Nila Ready",
+          "email": "nila.ready@example.com",
+          "designation": "Sr. Software Engineer",
+          "organization": "Example.com",
+          "country": "India",
+          "aboutMe": "About me Section ...",
+          "githubId": "nila.ready",
+          "facebookId": "",
+          "twitterId": "nila.ready",
+          "createdOn": "{{*}}"
+        }
+      ],
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "GET",
+    "headers": {
+      "Accept": "application/json, text/javascript, */*; q=0.01",
+      "Copy_of_Accept": "application/json, text/javascript, */*; q=0.01",
+      "Copy_of_Copy_of_Accept": "application/json, text/javascript, */*; q=0.01"
+    },
+    "queryParams": [
+      {
+        "name": "hello1",
+        "value": "world1"
+      },
+      {
+        "name": "hello2",
+        "value": "world2"
+      }
+    ],
+    "body": {
+      "content": "",
+      "type": "form-urlencoded",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "resultVariable": ""
+}

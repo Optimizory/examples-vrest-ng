@@ -1,0 +1,88 @@
+{
+  "details": {
+    "summary": "Validate whether Add Contact API works with all valid details",
+    "description": "This test case validates that Add Contact API works with all valid details.\n\nFor response validation, Default Validator is used. There are two dynamic properties in the response \"_id\" and \"createdOn\". \nWe have ignored those dynamic properties using special variable \"{{*}}\".\n\nWe have extracted the value of _id from actual response into a variable \"contactId\" using Variable Extractor functionality. And this \"contactId\" variable is used in subsequent requests. \n\nIn the same manner, you can also chain multiple requests.",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "positive",
+      "admin"
+    ],
+    "condition": "",
+    "authorizationId": ""
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Schema Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "_id": "{{*}}",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe",
+        "createdOn": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/definitions/Contact"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "POST",
+    "headers": {
+      "Accept": "application/json, text/javascript, */*; q=0.01",
+      "Content-Type": "application/json"
+    },
+    "queryParams": [],
+    "body": {
+      "content": {
+        "_id": null,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe"
+      },
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [
+    {
+      "name": "contactId",
+      "path": "_id"
+    }
+  ]
+}

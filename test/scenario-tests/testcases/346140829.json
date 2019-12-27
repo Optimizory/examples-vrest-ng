@@ -1,0 +1,87 @@
+{
+  "details": {
+    "summary": "Initialize Contacts DB",
+    "description": "This test case is an example of Setup method of your test cases. We have implemented API \"/contacts/rePopulateDB\" to restore the database. This type of APIs should be open only for Test environment.\n\nEvery time, this API is executed, the database of sample contacts application is re-initialized.\n\nResponse Validation: For response validation, we have chosen Default Validator. And in the expected body, we have ignored two dynamic properties \"_id\" and \"createdOn\".\n\nThe variable \"contactsAppBaseURLV2\" used in the URL of this test case is a global variable and can be defined by going to More >> Variables.",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "positive"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      }
+    ],
+    "expectedBody": {
+      "content": [
+        {
+          "name": "Lindsey Okelley",
+          "email": "lindsey.okelley@example.com",
+          "designation": "Product Evangelist",
+          "organization": "Example.com",
+          "country": "India",
+          "aboutMe": "This is about me section ...",
+          "linkedInId": "lindsey.okelley",
+          "githubId": "lindsey.okelley",
+          "facebookId": "lindsey.okelley",
+          "twitterId": "lindsey.okelley",
+          "createdOn": "{{*}}",
+          "_id": "{{*}}"
+        },
+        {
+          "name": "Lorette Cuffie",
+          "email": "lorette.cuffie@example.com",
+          "designation": "Software Engineer",
+          "organization": "Example.com",
+          "country": "US",
+          "aboutMe": "This is about me section ...",
+          "githubId": "",
+          "facebookId": "lorette.cuffie",
+          "twitterId": "lorette.cuffie",
+          "createdOn": "{{*}}",
+          "_id": "{{*}}"
+        },
+        {
+          "name": "Nila Ready",
+          "email": "nila.ready@example.com",
+          "designation": "Sr. Software Engineer",
+          "organization": "Example.com",
+          "country": "India",
+          "aboutMe": "About me Section ...",
+          "githubId": "nila.ready",
+          "facebookId": "",
+          "twitterId": "nila.ready",
+          "createdOn": "{{*}}",
+          "_id": "{{*}}"
+        }
+      ],
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/rePopulateDB",
+    "method": "POST",
+    "headers": {},
+    "queryParams": [],
+    "body": {
+      "content": "",
+      "type": "form-urlencoded",
+      "formParams": []
+    }
+  },
+  "variables": []
+}

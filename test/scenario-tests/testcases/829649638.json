@@ -1,0 +1,66 @@
+{
+  "details": {
+    "summary": "Validate whether View Contact API by ID is returning the correct details or not",
+    "description": "Example of Positive Test Case.\nValidating whether providing the correct contact Id to View Contact API is working fine or not.\n\nFor response validation, Default Validator is used. \n\nThere is one dynamic property \"_id\" which we have extracted from our Add Contact API and used in this API in the request URL and expected response.",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "positive"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Schema Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "_id": "{{contactId}}",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "[updated] My name can be used as a placeholder name and I don't have any real identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe",
+        "createdOn": "2014-05-03T06:28:45.479Z"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{contactId}}",
+    "method": "GET",
+    "headers": {
+      "Accept": "application/json, text/javascript, */*; q=0.01"
+    },
+    "queryParams": [],
+    "body": {
+      "content": "",
+      "type": "others",
+      "formParams": []
+    }
+  },
+  "variables": []
+}

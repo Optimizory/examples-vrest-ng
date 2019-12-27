@@ -1,0 +1,64 @@
+{
+  "details": {
+    "summary": "Validate whether Update Contact API should return error when setting invalid email for a contact",
+    "description": "Example of negative test case. As we are setting invalid email for email field, the API should return in such case.\n\nThis API returns the static error response in such scenario. Such type of responses are proper candidate for Default Validator.",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "negative"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "400"
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "errors": {
+          "email": "Email Id is not valid."
+        }
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{contactId}}",
+    "method": "PUT",
+    "headers": {
+      "Accept": "application/json, text/javascript, */*; q=0.01",
+      "Content-Type": "application/json"
+    },
+    "queryParams": [],
+    "body": {
+      "content": {
+        "name": "John Doe",
+        "email": "someInvalidEmailAddress",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe",
+        "createdOn": "2014-05-03T06:28:45.479Z"
+      },
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": []
+}

@@ -1,0 +1,197 @@
+{
+  "details": {
+    "summary": "Validate whether Update Contact API by ID works properly with all valid details",
+    "description": "Example of Positive Test Case. Validating whether providing all the valid details to Update Contact API is working fine or not.",
+    "waitForseconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "positive"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Schema Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "[updated] My name can be used as a placeholder name and I don't have any real identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe",
+        "createdOn": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "definitions": {},
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$id": "http://example.com/root.json",
+        "type": "object",
+        "title": "The Root Schema",
+        "required": [
+          "name",
+          "email",
+          "designation",
+          "organization",
+          "country",
+          "aboutMe",
+          "twitterId",
+          "facebookId",
+          "githubId",
+          "createdOn"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "John Doe"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "email": {
+            "$id": "#/properties/email",
+            "type": "string",
+            "title": "The Email Schema",
+            "default": "",
+            "examples": [
+              "john.doe@example.com"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "designation": {
+            "$id": "#/properties/designation",
+            "type": "string",
+            "title": "The Designation Schema",
+            "default": "",
+            "examples": [
+              "Chief Technical Officer"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "organization": {
+            "$id": "#/properties/organization",
+            "type": "string",
+            "title": "The Organization Schema",
+            "default": "",
+            "examples": [
+              "Example.com"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "country": {
+            "$id": "#/properties/country",
+            "type": "string",
+            "title": "The Country Schema",
+            "default": "",
+            "examples": [
+              "India"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "aboutMe": {
+            "$id": "#/properties/aboutMe",
+            "type": "string",
+            "title": "The Aboutme Schema",
+            "default": "",
+            "examples": [
+              "[updated] My name can be used as a placeholder name and I don't have any real identity."
+            ],
+            "pattern": "^(.*)$"
+          },
+          "twitterId": {
+            "$id": "#/properties/twitterId",
+            "type": "string",
+            "title": "The Twitterid Schema",
+            "default": "",
+            "examples": [
+              "fake.john.doe"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "facebookId": {
+            "$id": "#/properties/facebookId",
+            "type": "string",
+            "title": "The Facebookid Schema",
+            "default": "",
+            "examples": [
+              "fake.john.doe"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "githubId": {
+            "$id": "#/properties/githubId",
+            "type": "string",
+            "title": "The Githubid Schema",
+            "default": "",
+            "examples": [
+              "fake.john.doe"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "createdOn": {
+            "$id": "#/properties/createdOn",
+            "type": "string",
+            "title": "The Createdon Schema",
+            "default": "",
+            "examples": [
+              "2014-05-03T06:28:45.479Z"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{contactId}}",
+    "method": "PUT",
+    "headers": {
+      "Accept": "application/json, text/javascript, */*; q=0.01",
+      "Content-Type": "application/json"
+    },
+    "queryParams": [],
+    "body": {
+      "content": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "[updated] My name can be used as a placeholder name and I don't have any real identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe",
+        "createdOn": "2014-05-03T06:28:45.479Z"
+      },
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": []
+}

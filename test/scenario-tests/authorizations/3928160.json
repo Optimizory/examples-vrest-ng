@@ -1,0 +1,10 @@
+{
+  "name": "Admin User",
+  "authType": "Basic",
+  "details": {
+    "Dev": {
+      "username": "admin",
+      "password": "admin"
+    }
+  }
+}

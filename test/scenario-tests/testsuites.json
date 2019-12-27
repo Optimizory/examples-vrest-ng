@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Test Suite 1",
+    "testCaseIds": [
+      "346140829",
+      "240753238",
+      "8552716",
+      "661572182",
+      "861203711",
+      "829649638",
+      "412164743",
+      "465565963",
+      "275066714"
+    ]
+  },
+  {
+    "name": "Test Suite 2",
+    "description": null,
+    "testCaseIds": []
+  },
+  {
+    "name": "Test Suite 3",
+    "description": null,
+    "testCaseIds": []
+  }
+]
