@@ -95,6 +95,12 @@ var isValidContact = function (contact) {
     }
   }
 
+  if(contact.email){
+    if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(contact.email)){
+      errors["email"] = "Email Id is not valid.";
+    }
+  }
+
   if (_.isEmpty(errors)) {
     return true;
   }
@@ -238,7 +244,7 @@ var populateDB = function (next) {
     }, function (err, result) {
       if(!err) console.log("Sample data inserted.");
       if (next) {
-        next(err, result);
+        next(err, result && result.ops);
       }
     });
   });

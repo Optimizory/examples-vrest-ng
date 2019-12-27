@@ -13,7 +13,9 @@ test:
     - PORT=5080 DB=mongodb://mongo:27017/contactdb node server.js &
     - apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget
     - wget -O vrest_ng_cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.1/vrest_ng_cli_alpine_1_0_1
-    - ls -ltr
     - chmod u+x ./vrest_ng_cli
-    - ls -ltr
-    - ./vrest_ng_cli run --projectdir=./test/contacts-api-tests
+    - ./vrest_ng_cli run --projectdir=./test/scenario-tests --logger=xunit
+  artifacts:
+    when: always
+    reports:
+      junit: $PWD/vrest_logs/logs.xml
