@@ -110,7 +110,6 @@ var isValidContact = function (contact) {
 exports.addcontact = function (req, res) {
   var contact = req.body;
   contact.createdOn = new Date();
-  console.log('Adding contact: ' + JSON.stringify(contact));
   db.collection('contacts', function (err, collection) {
     var isValid = isValidContact(contact);
     if (isValid === true) {
@@ -122,7 +121,6 @@ exports.addcontact = function (req, res) {
             'error': 'An error has occurred'
           });
         } else {
-          console.log('Success: ' + JSON.stringify(result.ops[0]));
           res.send(result.ops[0]);
         }
       });
