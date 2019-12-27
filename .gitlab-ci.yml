@@ -3,6 +3,12 @@ image: node:9-alpine
 stages:
   - test
 
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+
 test:
   stage: test
   services:
@@ -17,5 +23,7 @@ test:
     - ./vrest_ng_cli run --projectdir=./test/scenario-tests --logger=xunit
   artifacts:
     when: always
+    paths:
+      - vrest_logs/logs.xml
     reports:
-      junit: $PWD/vrest_logs/logs.xml
+      junit: vrest_logs/logs.xml
