@@ -20,7 +20,7 @@ Note: Before proceeding further, make sure your MongoDB server is running.
 2. Make sure mongodb server is already running
 
 3. Run the application server
-```PORT=5090 node server.js```
+```npm run start```
 
 ## Data Written by vREST NG ##
 The test directory contains a directory named as `contacts-api-tests` which is a project written by vREST NG application. When you import this directory in vREST NG, then you will be able to see all the test cases.
