@@ -1,4 +1,5 @@
 var express = require('express'),
+  bodyParser = require("body-parser"),
   path = require('path'),
   http = require('http'),
   contact = require('./routes/contacts'),
@@ -19,16 +20,14 @@ app.locals = {
 
 app.disable('etag');
 
-app.configure(function () {
-  app.set('port', process.env.PORT || 3000);
-  app.use(express.logger('dev')); /* 'default', 'short', 'tiny', 'dev' */
-  app.use(express.bodyParser());
-  app.set('views', path.join(__dirname, 'public'));
-  app.engine('html', require('ejs').renderFile);
-  app.set('view engine', 'html');
-  app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
-});
+app.set('port', process.env.PORT || 3000);
+// app.use(express.logger('dev')); /* 'default', 'short', 'tiny', 'dev' */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.set('views', path.join(__dirname, 'public'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use(express.static(path.join(__dirname, 'public')));
 
 var requiresLogin = function (req, res, next) {
   next();

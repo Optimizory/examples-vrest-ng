@@ -3,11 +3,18 @@
   "description": "vREST Contacts Application",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "cross-env PORT=5090 node server.js"
+  },
   "dependencies": {
-    "express": "3.11.0",
+    "body-parser": "^1.19.0",
     "ejs": "2.5.5",
-    "mongodb": "2.2.19",
+    "express": "^4.17.1",
+    "mongodb": "2.2.9",
     "underscore": "1.5.2"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3"
   },
   "engines": {
     "node": "0.8.4",
