@@ -13,10 +13,8 @@ if (baseURL.indexOf('prod') !== -1) {
   instanceType = 'Production';
 }
 
-app.locals = {
-  baseURL: process.env.baseURL || '/',
-  instanceType: instanceType
-};
+app.locals.baseURL = baseURL;
+app.locals.instanceType = instanceType;
 
 app.disable('etag');
 
@@ -25,8 +23,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'public'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 var requiresLogin = function (req, res, next) {
