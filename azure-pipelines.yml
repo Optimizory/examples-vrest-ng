@@ -34,7 +34,7 @@ steps:
     restoreKeys: vrest | $(Agent.OS) | package-lock.json
   displayName: Cache vrest-ng-cli binary
 
-- script: npm install
+- script: npm ci
   displayName: 'Install NPM dependencies'
 
 - script: npm install -g vrest-ng-cli
