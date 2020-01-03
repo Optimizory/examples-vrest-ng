@@ -45,7 +45,7 @@ steps:
 - script: npm install -g vrest-ng-cli
   displayName: 'Install vrest-ng-cli'
 
-- script: PORT=5090 DB=mongodb://mongo:27017/contactdb node server.js &
+- script: PORT=5090 DB=mongodb://localhost:27017/contactdb node server.js &
   displayName: 'Start the application server'
 
 - script: vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
