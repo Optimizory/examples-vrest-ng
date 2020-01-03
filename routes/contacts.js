@@ -1,23 +1,14 @@
-var mongo = require('mongodb'),
+var TingoDB = require('tingodb')().Db,
   _ = require('underscore');
 
-var MongoClient = mongo.MongoClient,
-  ObjectID = mongo.ObjectID,
-  db = null;
+var db = new TingoDB('./db', {});
 
-var connectionStr = process.env.DB || 'mongodb://localhost:27017/contactdb';
-MongoClient.connect(connectionStr, function(err, dbObj) {
+db.collection("contacts", function (err, contacts) {
   if(err){
-    console.error("Error while connecting to database");
-    process.exit(1);
-  } else {
-    db = dbObj;
-    console.log("Connected to database");
-    db.listCollections({name: 'contacts'}).next(function (err, collection) {
-      if (!collection) {
-        console.log("The 'contacts' collection doesn't exist. Creating it with sample data...");
-        populateDB();
-      }
+    console.error(err);
+  } else if(!contacts.length){
+    populateDB(function(err, result){
+      console.log("Database Loaded");
     });
   }
 });
@@ -46,7 +37,7 @@ exports.findById = function (req, res) {
   var id = req.params.id;
   console.log('Retrieving contact: ' + id);
   db.collection('contacts').findOne({
-    '_id': new ObjectID(id)
+    '_id': id
   }, function (err, item) {
     if (err) {
       res.send(400, {
@@ -141,7 +132,7 @@ exports.updatecontact = function (req, res) {
     var isValid = isValidContact(contact);
     if (isValid === true) {
       collection.update({
-        '_id': new ObjectID(id)
+        '_id': id
       }, contact, function (err, result) {
         if (err) {
           console.log('Error updating contact: ' + err);
@@ -172,7 +163,7 @@ exports.deletecontact = function (req, res) {
   console.log('Deleting contact: ' + id);
   db.collection('contacts', function (err, collection) {
     collection.remove({
-      '_id': new ObjectID(id)
+      '_id': id
     }, function (err, result) {
       if (err) {
         res.send(400, {
