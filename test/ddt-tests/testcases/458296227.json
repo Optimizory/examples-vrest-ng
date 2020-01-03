@@ -1,6 +1,6 @@
 {
   "details": {
-    "summary": "Find contact by id",
+    "summary": "Delete contact by id",
     "condition": "",
     "loopSource": "{{data}}",
     "waitForSeconds": null,
@@ -40,7 +40,7 @@
   },
   "request": {
     "url": "{{baseURL}}/contacts/{{data.$.contactId}}",
-    "method": "GET",
+    "method": "DELETE",
     "headers": {},
     "queryParams": [],
     "body": {
@@ -52,10 +52,10 @@
   "variables": [],
   "extensions": {
     "vrest-excel-plugin": {
-      "testDataFilePath": "{{$projectDir}}/data/find_contact_by_id.csv"
+      "testDataFilePath": "{{$projectDir}}/data/delete_contact_by_id.csv"
     },
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{mongorestoreCmd}} --drop --db contactdb \"{{$projectDir}}/dumps/contactdb\""
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
     }
   }
 }

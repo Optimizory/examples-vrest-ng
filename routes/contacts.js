@@ -1,34 +1,106 @@
-var TingoDB = require('tingodb')().Db,
+var db = require("../lib/db"),
   _ = require('underscore');
 
-var db = new TingoDB('./db', {});
+var sendError = function(res, error){
+  res.status(400);
+  res.json({
+    'error': error
+  });
+};
 
-db.collection("contacts", function (err, contacts) {
-  if(err){
-    console.error(err);
-  } else if(!contacts.length){
-    populateDB(function(err, result){
-      console.log("Database Loaded");
-    });
+/*--------------------------------------------------------------------------------------------------------------------*/
+// Populate database with sample data -- Only used once: the first time the application is started.
+// You'd typically not find this code in a real-life app, since the database would already exist.
+var populateDBIfNotExists = function(next){
+  db.listRecords(function(err, result){
+    if(!result || result.length === 0){
+      populateDB(next);
+    } else if(next){
+      next(result);
+    }
+  });
+};
+
+var populateDB = function (next) {
+  db.createRecords(sampleData, function(err, result){
+    if(!err) console.log("Sample data inserted.");
+    if (next) {
+      next(err, result);
+    }
+  })
+};
+
+var sampleData = [
+  {
+    _id: "5de0bf804e576dc4e5f4b984",
+    name: "Dheeraj Kumar Aggarwal",
+    email: "dheeraj.aggarwal@optimizory.com",
+    designation: "Engineering Manager",
+    organization: "Optimizory Technologies Pvt. Ltd.",
+    country: "India",
+    aboutMe: "Passionate to learn and innovate new ideas and do every piece of work with a degree of excellence and try best to bring ideas into life. My hobbies are Yoga and Kalaripayattu. I am currently working on vREST NG (https://ng.vrest.io).",
+    linkedInId: "aggarwaldheeraj",
+    githubId: "dheerajaggarwal",
+    facebookId: "dheeraj.aggarwal",
+    twitterId: "dheerajaggarwal",
+    createdOn: "2020-01-03T10:35:11.122Z"
+  },
+  {
+    _id: "5de0bf804e5461ede5f4b681",
+    name: "Lindsey Okelley",
+    email: "lindsey.okelley@example.com",
+    designation: "Product Evangelist",
+    organization: "Example.com",
+    country: "India",
+    aboutMe: "This is about me section ...",
+    linkedInId: "lindsey.okelley",
+    githubId: "lindsey.okelley",
+    facebookId: "lindsey.okelley",
+    twitterId: "lindsey.okelley",
+    createdOn: new Date()
+  },
+  {
+    _id: "5de0bf804e577dc5e5e4b082",
+    name: "Lorette Cuffie",
+    email: "lorette.cuffie@example.com",
+    designation: "Software Engineer",
+    organization: "Example.com",
+    country: "US",
+    aboutMe: "This is about me section ...",
+    githubId: "",
+    facebookId: "lorette.cuffie",
+    twitterId: "lorette.cuffie",
+    createdOn: new Date()
+  },
+  {
+    _id: "5de0bf804e5c11c425f3b578",
+    name: "Nila Ready",
+    email: "nila.ready@example.com",
+    designation: "Sr. Software Engineer",
+    organization: "Example.com",
+    country: "India",
+    aboutMe: "About me Section ...",
+    githubId: "nila.ready",
+    facebookId: "",
+    twitterId: "nila.ready",
+    createdOn: new Date()
   }
-});
+];
+
+populateDBIfNotExists();
 
 exports.rePopulateDB = function (req, res) {
-  db.dropDatabase(function (err, done) {
+  db.clearDB(function(err){
     if (!err) {
       populateDB(function (err, result) {
         if (err) {
-          res.send(400, {
-            'error': 'An error has occurred'
-          });
+          sendError(res, 'An error has occurred');
         } else {
           res.json(result);
         }
       });
     } else {
-      res.send(400, {
-        'error': 'An error has occurred'
-      });
+      sendError(res, 'An error has occurred');
     }
   });
 };
@@ -36,32 +108,26 @@ exports.rePopulateDB = function (req, res) {
 exports.findById = function (req, res) {
   var id = req.params.id;
   console.log('Retrieving contact: ' + id);
-  db.collection('contacts').findOne({
-    '_id': id
-  }, function (err, item) {
+  db.readRecord(id, function(err, item){
     if (err) {
-      res.send(400, {
-        'error': 'An error has occurred'
-      });
+      sendError(res, 'An error has occurred');
     } else {
       if (item) {
         res.json(item);
       } else {
-        res.send(400, {
-          'error': 'Contact with id "' + id + '" not found.'
-        });
+        sendError(res, 'Contact with id "' + id + '" not found.');
       }
     }
   });
 };
 
 exports.findAll = function (req, res) {
-  db.collection('contacts', function (err, collection) {
-    collection.find().sort({
-      'createdOn': 1
-    }).toArray(function (err, items) {
+  db.listRecords(function(err, items){
+    if (err) {
+      sendError(res, 'An error has occurred');
+    } else {
       res.json(items);
-    });
+    }
   });
 };
 
@@ -101,141 +167,63 @@ var isValidContact = function (contact) {
 exports.addcontact = function (req, res) {
   var contact = req.body;
   contact.createdOn = new Date();
-  db.collection('contacts', function (err, collection) {
-    var isValid = isValidContact(contact);
-    if (isValid === true) {
-      collection.insert(contact, {
-        safe: true
-      }, function (err, result) {
-        if (err) {
-          res.send(400, {
-            'error': 'An error has occurred'
-          });
-        } else {
-          res.send(result.ops[0]);
-        }
-      });
-    } else {
-      res.send(400, {
-        errors: isValid
-      });
-    }
-  });
-}
+  
+  var isValid = isValidContact(contact);
+  if (isValid === true) {
+    db.createRecord(contact, function(err, result){
+      if (err) {
+        sendError(res, 'An error has occurred');
+      } else {
+        res.send(result);
+      }
+    });    
+  } else {
+    res.status(400);
+    res.json({
+      errors: isValid
+    });
+  }
+};
 
 exports.updatecontact = function (req, res) {
   var id = req.params.id;
   var contact = req.body;
   delete contact._id;
   console.log('Updating contact: ' + id);
-  db.collection('contacts', function (err, collection) {
-    var isValid = isValidContact(contact);
-    if (isValid === true) {
-      collection.update({
-        '_id': id
-      }, contact, function (err, result) {
-        if (err) {
-          console.log('Error updating contact: ' + err);
-          res.send(400, {
-            'error': 'An error has occurred'
-          });
+  var isValid = isValidContact(contact);
+  if (isValid === true) {
+    db.updateRecord(id, contact, function(err, result){
+      if (err) {
+        sendError(res, 'An error has occurred');
+      } else {
+        if (result) {
+          res.json(result);
         } else {
-          if (result && result.result && result.result.n) {
-            console.log('' + result + ' document(s) updated');
-            res.send(contact);
-          } else {
-            res.send(400, {
-              'error': 'Contact with id "' + id + '" not found.'
-            });
-          }
+          sendError(res, 'Contact with id "' + id + '" not found.');
         }
-      });
-    } else {
-      res.send(400, {
-        errors: isValid
-      });
-    }
-  });
-}
+      }
+    });
+  } else {
+    res.status(400);
+    res.json({
+      errors: isValid
+    });
+  }
+};
 
 exports.deletecontact = function (req, res) {
   var id = req.params.id;
   console.log('Deleting contact: ' + id);
-  db.collection('contacts', function (err, collection) {
-    collection.remove({
-      '_id': id
-    }, function (err, result) {
-      if (err) {
-        res.send(400, {
-          'error': 'An error has occurred - ' + err
-        });
+  db.deleteRecord(id, function(err, result){
+    if (err) {
+      sendError(400, 'An error has occurred - ' + err);
+    } else {
+      if (result) {
+        console.log('Document deleted');
+        res.send({});
       } else {
-        if (result && result.result && result.result.n) {
-          console.log('' + result + ' document(s) deleted');
-          res.send(req.body);
-        } else {
-          res.send(400, {
-            'error': 'Contact with id "' + id + '" not found.'
-          });
-        }
+        sendError(res, 'Contact with id "' + id + '" not found.');
       }
-    });
-  });
-}
-
-/*--------------------------------------------------------------------------------------------------------------------*/
-// Populate database with sample data -- Only used once: the first time the application is started.
-// You'd typically not find this code in a real-life app, since the database would already exist.
-var populateDB = function (next) {
-
-  var contacts = [{
-      name: "Lindsey Okelley",
-      email: "lindsey.okelley@example.com",
-      designation: "Product Evangelist",
-      organization: "Example.com",
-      country: "India",
-      aboutMe: "This is about me section ...",
-      linkedInId: "lindsey.okelley",
-      githubId: "lindsey.okelley",
-      facebookId: "lindsey.okelley",
-      twitterId: "lindsey.okelley",
-      createdOn: new Date()
-    },
-    {
-      name: "Lorette Cuffie",
-      email: "lorette.cuffie@example.com",
-      designation: "Software Engineer",
-      organization: "Example.com",
-      country: "US",
-      aboutMe: "This is about me section ...",
-      githubId: "",
-      facebookId: "lorette.cuffie",
-      twitterId: "lorette.cuffie",
-      createdOn: new Date()
-    },
-    {
-      name: "Nila Ready",
-      email: "nila.ready@example.com",
-      designation: "Sr. Software Engineer",
-      organization: "Example.com",
-      country: "India",
-      aboutMe: "About me Section ...",
-      githubId: "nila.ready",
-      facebookId: "",
-      twitterId: "nila.ready",
-      createdOn: new Date()
     }
-  ];
-
-  db.collection('contacts', function (err, collection) {
-    collection.insert(contacts, {
-      safe: true
-    }, function (err, result) {
-      if(!err) console.log("Sample data inserted.");
-      if (next) {
-        next(err, result && result.ops);
-      }
-    });
   });
-
 };

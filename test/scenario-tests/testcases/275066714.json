@@ -26,6 +26,20 @@
       "content": [
         {
           "_id": "{{*}}",
+          "name": "Dheeraj Kumar Aggarwal",
+          "email": "dheeraj.aggarwal@optimizory.com",
+          "designation": "Engineering Manager",
+          "organization": "Optimizory Technologies Pvt. Ltd.",
+          "country": "India",
+          "aboutMe": "Passionate to learn and innovate new ideas and do every piece of work with a degree of excellence and try best to bring ideas into life. My hobbies are Yoga and Kalaripayattu. I am currently working on vREST NG (https://ng.vrest.io).",
+          "linkedInId": "aggarwaldheeraj",
+          "githubId": "dheerajaggarwal",
+          "facebookId": "dheeraj.aggarwal",
+          "twitterId": "dheerajaggarwal",
+          "createdOn": "{{*}}"
+        },
+        {
+          "_id": "{{*}}",
           "name": "Lindsey Okelley",
           "email": "lindsey.okelley@example.com",
           "designation": "Product Evangelist",

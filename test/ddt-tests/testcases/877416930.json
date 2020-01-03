@@ -1,6 +1,6 @@
 {
   "details": {
-    "summary": "Delete contact by id",
+    "summary": "Update contact by id",
     "condition": "",
     "loopSource": "{{data}}",
     "waitForSeconds": null,
@@ -40,22 +40,49 @@
   },
   "request": {
     "url": "{{baseURL}}/contacts/{{data.$.contactId}}",
-    "method": "DELETE",
-    "headers": {},
+    "method": "PUT",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
     "queryParams": [],
     "body": {
-      "content": {},
-      "type": "json",
-      "formParams": []
+      "content": null,
+      "type": "form-urlencoded",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "{{data.$.name}}"
+        },
+        {
+          "name": "email",
+          "value": "{{data.$.email}}"
+        },
+        {
+          "name": "designation",
+          "value": "{{data.$.designation}}"
+        },
+        {
+          "name": "organization",
+          "value": "{{data.$.organization}}"
+        },
+        {
+          "name": "country",
+          "value": "{{data.$.country}}"
+        },
+        {
+          "name": "aboutMe",
+          "value": "{{data.$.aboutMe}}"
+        }
+      ]
     }
   },
   "variables": [],
   "extensions": {
     "vrest-excel-plugin": {
-      "testDataFilePath": "{{$projectDir}}/data/delete_contact_by_id.csv"
+      "testDataFilePath": "{{$projectDir}}/data/update_contact_by_id.csv"
     },
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{mongorestoreCmd}} --drop --db contactdb \"{{$projectDir}}/dumps/contactdb\""
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
     }
   }
 }
