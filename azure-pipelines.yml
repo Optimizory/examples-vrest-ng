@@ -2,12 +2,6 @@
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-resources:
-  containers:
-  - container: mongo
-    image: mongo
-    ports:
-    - 27017:27017
 trigger:
 - master
 
@@ -45,7 +39,7 @@ steps:
 - script: npm install -g vrest-ng-cli
   displayName: 'Install vrest-ng-cli'
 
-- script: PORT=5090 DB=mongodb://localhost:27017/contactdb node server.js &
+- script: PORT=5090 node server.js &
   displayName: 'Start the application server'
 
 - script: vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
