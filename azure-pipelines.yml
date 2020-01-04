@@ -45,7 +45,7 @@ steps:
       echo "##vso[task.setVariable variable=VREST_CLI_EXISTS]false"
     fi
 
-- script: mkdir -p /home/vsts/.cache 
+- script: mkdir -p /home/vsts/.cache/vrest
   displayName: "Create cache directory if not exists"
 - script: wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.2/vrest_ng_cli_linux_1_0_2
   displayName: "Download binary"
