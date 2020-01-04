@@ -50,6 +50,6 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'xUnit' # Options: JUnit, NUnit, VSTest, xUnit, cTest
-    testResultsFiles: 'vrest_logs/log.xml' 
+    testResultsFiles: 'vrest_logs/logs.xml' 
     searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
 
