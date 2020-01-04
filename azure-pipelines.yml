@@ -9,6 +9,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+# [Use this step] To install vrest-ng-cli binary as a npm module
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
@@ -28,7 +29,7 @@ steps:
     restoreKeys: npm | $(Agent.OS) | package-lock.json
   displayName: Cache NPM packages
 
-# vrest-ng-cli binary should be cached
+# [Use this step] vrest-ng-cli binary should be cached
 - task: CacheBeta@1
   inputs:
     key: vrest | $(Agent.OS) | package-lock.json
@@ -36,6 +37,7 @@ steps:
     restoreKeys: vrest | $(Agent.OS) | package-lock.json
   displayName: Cache vrest-ng-cli binary
 
+# [Use this step] Install vrest-ng-cli as a npm module
 - script: npm install -g vrest-ng-cli
   displayName: 'Install vrest-ng-cli'
 
@@ -45,11 +47,11 @@ steps:
 - script: PORT=5090 node server.js &
   displayName: 'Start the application server'
 
+# [Use this step] To run vREST NG written Tests
 - script: vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
   displayName: 'Run vREST NG Tests'
 
-# Publish Test Results
-# Publish test results to Azure Pipelines
+# [Use this step] To publish test results to azure pipelines
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit, cTest
