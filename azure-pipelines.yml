@@ -38,7 +38,7 @@ steps:
   displayName: Cache vrest-ng-cli binary
 
 # [Use this step] Install vrest-ng-cli as a npm module
-- script: npm install -g vrest-ng-cli
+- script: npm install -g vrest-ng-cli@1.0.2
   displayName: 'Install vrest-ng-cli'
 
 - script: npm ci
