@@ -46,7 +46,7 @@ steps:
 - script: |
     wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.2/vrest_ng_cli_linux_1_0_2
     chmod +x /home/vsts/.cache/vrest/vrest-ng-cli
-  condition: eq(variables.VREST_CLI_EXISTS, 'true')
+  condition: eq(variables.VREST_CLI_EXISTS, 'false')
   displayName: 'Download and Install vrest-ng-cli binary'
 
 - script: npm ci
