@@ -9,14 +9,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-# [Use this step] To install vrest-ng-cli binary as a npm module
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-# NPM modules should be cached
-# otherwise the install will be too slow
+# NPM modules should be cached otherwise the install will be too slow
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/caching/?view=azure-devops
 # since the username / user home directory are not available via system variables
 # (there is even an open question about it)
@@ -34,21 +32,31 @@ steps:
   inputs:
     key: vrest | $(Agent.OS) | package-lock.json
     path: /home/vsts/.cache/vrest
-    restoreKeys: vrest | $(Agent.OS) | package-lock.json
+    restoreKeys: vrest | $(Agent.OS) | 1_0_2
   displayName: Cache vrest-ng-cli binary
 
-# [Use this step] Install vrest-ng-cli as a npm module
-- script: npm install -g vrest-ng-cli@1.0.2
-  displayName: 'Install vrest-ng-cli'
+# [Use this step] Download and Install vrest-ng-cli from Github Release
+# Change version if you would like to install different version
+# Change OS if you would like to install on different operation system
+- bash: |
+    if [ -f /home/vsts/.cache/vrest/vrest-ng-cli ]; then
+      echo "##vso[task.setVariable variable=VREST_CLI_EXISTS]true"
+    fi
+
+- script: |
+    wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.2/vrest_ng_cli_linux_1_0_2
+    chmod +x /home/vsts/.cache/vrest/vrest-ng-cli
+  condition: eq(variables.VREST_CLI_EXISTS, 'true')
+  displayName: 'Download and Install vrest-ng-cli binary'
 
 - script: npm ci
   displayName: 'Install NPM dependencies'
 
-- script: PORT=5090 node server.js &
+- script: npm run start &
   displayName: 'Start the application server'
 
 # [Use this step] To run vREST NG written Tests
-- script: vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
+- script: /home/vsts/.cache/vrest/vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
   displayName: 'Run vREST NG Tests'
 
 # [Use this step] To publish test results to azure pipelines
