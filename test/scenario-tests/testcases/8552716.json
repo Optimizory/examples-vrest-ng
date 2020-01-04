@@ -34,7 +34,7 @@
     "expectedBody": {
       "content": {
         "_id": "{{*}}",
-        "name": "John Doe - invalid",
+        "name": "John Doe",
         "email": "john.doe@example.com",
         "designation": "Chief Technical Officer",
         "organization": "Example.com",
