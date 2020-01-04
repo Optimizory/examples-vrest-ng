@@ -8,8 +8,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+# [Use this step] To define the vrest-ng-cli version to be downloaded
+variables:
+  vrest_version: '1.0.3' #vrest-ng-cli version to be downloaded
+  vrest_uversion: '1_0_3' #underscore variant of vrest-ng-cli version
+
 steps:
-# [Use this step] To install vrest-ng-cli binary as a npm module
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
@@ -21,7 +25,7 @@ steps:
 # (there is even an open question about it)
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops
 # just use "/home/vsts" for now
-- task: CacheBeta@1
+- task: Cache@2
   inputs:
     key: npm | $(Agent.OS) | package-lock.json
     path: /home/vsts/.npm
@@ -29,17 +33,29 @@ steps:
   displayName: Cache NPM packages
 
 # [Use this step] vrest-ng-cli binary should be cached
-- task: CacheBeta@1
+- task: Cache@2
   inputs:
-    key: vrest | $(Agent.OS) | package-lock.json
+    key: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
     path: /home/vsts/.cache/vrest
-    restoreKeys: vrest | $(Agent.OS) | package-lock.json
+    restoreKeys: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
   displayName: Cache vrest-ng-cli binary
 
-# [Use this step] Install vrest-ng-cli as a npm module
+# [Use this step] Download and Install vrest-ng-cli from Github Release
 # Change version if you would like to install different version
-- script: npm install -g vrest-ng-cli@1.0.3
-  displayName: 'Install vrest-ng-cli'
+# Change OS if you would like to install on different operation system
+- bash: |
+    if [ -f /home/vsts/.cache/vrest/vrest-ng-cli ]; then
+      echo "##vso[task.setVariable variable=VREST_CLI_EXISTS]true"
+    else 
+      echo "##vso[task.setVariable variable=VREST_CLI_EXISTS]false"
+    fi
+
+- script: |
+    mkdir -p /home/vsts/.cache/vrest
+    wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$(vrest_version)/vrest_ng_cli_linux_$(vrest_uversion)
+    chmod +x /home/vsts/.cache/vrest/vrest-ng-cli
+  displayName: 'Download and Install vrest-ng-cli binary'
+  condition: eq(variables.VREST_CLI_EXISTS, 'false')
 
 - script: npm ci
   displayName: 'Install NPM dependencies'
@@ -48,7 +64,7 @@ steps:
   displayName: 'Start the application server'
 
 # [Use this step] To run vREST NG written Tests
-- script: vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
+- script: /home/vsts/.cache/vrest/vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
   displayName: 'Run vREST NG Tests'
 
 # [Use this step] To publish test results to azure pipelines
