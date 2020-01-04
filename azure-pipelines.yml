@@ -8,6 +8,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+# [Use this step] To define the vrest-ng-cli version to be downloaded
+variables:
+  vrest_version: '1.0.3' #vrest-ng-cli version to be downloaded
+
 steps:
 # [Use this step] To install vrest-ng-cli binary as a npm module
 - task: NodeTool@0
@@ -21,7 +25,7 @@ steps:
 # (there is even an open question about it)
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops
 # just use "/home/vsts" for now
-- task: CacheBeta@1
+- task: Cache@2
   inputs:
     key: npm | $(Agent.OS) | package-lock.json
     path: /home/vsts/.npm
@@ -29,16 +33,16 @@ steps:
   displayName: Cache NPM packages
 
 # [Use this step] vrest-ng-cli binary should be cached
-- task: CacheBeta@1
+- task: Cache@2
   inputs:
-    key: vrest | $(Agent.OS) | package-lock.json
+    key: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
     path: /home/vsts/.cache/vrest
-    restoreKeys: vrest | $(Agent.OS) | package-lock.json
+    restoreKeys: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
   displayName: Cache vrest-ng-cli binary
 
 # [Use this step] Install vrest-ng-cli as a npm module
 # Change version if you would like to install different version
-- script: npm install -g vrest-ng-cli@1.0.3
+- script: npm install -g vrest-ng-cli@$(vrest_version)
   displayName: 'Install vrest-ng-cli'
 
 - script: npm ci
