@@ -1,8 +1,8 @@
 # Sample Test Application to demonstrate [vREST NG](https://ng.vrest.io). #
 
-Sample Test Application "Contacts" is a CRUD application built with with Backbone.js, Twitter Bootstrap, Node.js, Express, and LowDB.
+Sample Test Application "**Contacts**" is a CRUD application built with with [Backbone.js](https://backbonejs.org/), [Bootstrap](https://getbootstrap.com/), [Node.js](https://nodejs.org/), [ExpressJS](https://expressjs.com/), and [LowDB](https://github.com/typicode/lowdb).
 
-The application allows you to browse through a list of contacts, as well as add, update, and delete contacts using the following APIs.
+The application allows you to browse through a **list of contacts**, as well as **add**, **update**, **read** and **delete** contacts using the following APIs.
 
 1. **POST** /contacts/rePopulateDB - Re-initialize the Database State
 2. **GET** /contacts - Returns List of contacts
@@ -23,11 +23,19 @@ The application allows you to browse through a list of contacts, as well as add,
 ```npm run start```
 
 ## Sample Projects written by vREST NG ##
+
 The `test` directory contains the following sample vREST NG projects which you may drag in vREST NG Application workspace area to see the test cases.
+
 1. `ddt-tests`: This is a project written by vREST NG application to demonstrate the Data driven testing capability of vREST NG.
+![vREST NG - Data Driven Testing Example](assets/ddt-tests.png)
+*vREST NG - Data Driven Testing Example*
+
 2. `scenario-tests`: This is a project written by vREST NG application to demonstrate the Scenario or workflow testing capability of vREST NG.
+![vREST NG - Scenario Testing Example](assets/scenario-tests.png)
+*vREST NG - Scenario Testing Example*
 
 ## Continuous Integration sample files ##
+
 1. `Gitlab CI`: For Gitlab CI, use file `.gitlab-ci.yml`.
 2. `Azure DevOps`: For Microsoft Azure DevOps, use file `azure-pipelines.yml`
 
