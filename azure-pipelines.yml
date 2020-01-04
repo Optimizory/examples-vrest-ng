@@ -8,6 +8,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  vrest_version: '1.0.3'
+  vrest_uversion: '1_0_3'
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -30,9 +34,9 @@ steps:
 # [Use this step] vrest-ng-cli binary should be cached
 - task: Cache@2
   inputs:
-    key: '"vrest-ng-cli-1.0.2" | $(Agent.OS)'
+    key: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
     path: /home/vsts/.cache/vrest
-    restoreKeys: '"vrest-ng-cli-1.0.2" | $(Agent.OS)'
+    restoreKeys: '"vrest-ng-cli-$(vrest_version)" | $(Agent.OS)'
   displayName: Cache vrest-ng-cli binary
 
 # [Use this step] Download and Install vrest-ng-cli from Github Release
@@ -47,7 +51,7 @@ steps:
 
 - script: |
     mkdir -p /home/vsts/.cache/vrest
-    wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.0.2/vrest_ng_cli_linux_1_0_2
+    wget -O /home/vsts/.cache/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$(vrest_version)/vrest_ng_cli_linux_$(vrest_uversion)
     chmod +x /home/vsts/.cache/vrest/vrest-ng-cli
   displayName: 'Download and Install vrest-ng-cli binary'
   condition: eq(variables.VREST_CLI_EXISTS, 'false')
