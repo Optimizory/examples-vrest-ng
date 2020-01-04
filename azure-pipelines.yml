@@ -30,9 +30,9 @@ steps:
 # [Use this step] vrest-ng-cli binary should be cached
 - task: CacheBeta@1
   inputs:
-    key: vrest | $(Agent.OS) | vrest-ng-cli
+    key: vrest | $(Agent.OS) | /home/vsts/.cache/vrest/vrest-ng-cli
     path: /home/vsts/.cache/vrest
-    restoreKeys: vrest | $(Agent.OS) | vrest-ng-cli
+    restoreKeys: vrest | $(Agent.OS) | /home/vsts/.cache/vrest/vrest-ng-cli
   displayName: Cache vrest-ng-cli binary
 
 # [Use this step] Download and Install vrest-ng-cli from Github Release
