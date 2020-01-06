@@ -8,6 +8,7 @@ variables:
   vrest_version: '1.0.3' #vrest-ng-cli version to be downloaded
   vrest_uversion: '1_0_3' #underscore variant of vrest-ng-cli version
   npm_config_cache: '$CI_PROJECT_DIR/.npm'
+  VREST_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/vrest'
 
 # Cache modules in between jobs
 cache:
@@ -15,6 +16,7 @@ cache:
   paths:
   - .npm
   - node_modules
+  - cache/vrest
 
 test:
   stage: test
@@ -26,11 +28,15 @@ test:
     # Start the application server
     - npm run start &
 
-    # download the vrest-ng-cli binary if cache doesn't exist
-    - npm install -g vrest-ng-cli@$vrest_version
+    - apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget
 
+    # download the vrest-ng-cli binary if cache doesn't exist
+    - if [ -f $VREST_CACHE_FOLDER/vrest-ng-cli ]; then echo "vrest ng cli binary already cached."; else mkdir -p $VREST_CACHE_FOLDER && wget -O $VREST_CACHE_FOLDER/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$vrest_version/vrest_ng_cli_alpine_$vrest_uversion; fi
+
+    # make the downloadable binary as executable
+    - chmod u+x $VREST_CACHE_FOLDER/vrest-ng-cli
     # Execute the vREST NG tests
-    - vrest-ng-cli run --projectdir=./test/scenario-tests --logger=xunit
+    - $VREST_CACHE_FOLDER/vrest-ng-cli run --projectdir=./test/scenario-tests --logger=xunit
     
   artifacts:
     when: always
