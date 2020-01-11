@@ -33,17 +33,17 @@
     ],
     "expectedBody": {
       "content": {
-        "_id": "{{*}}",
-        "name": "John Doe - invalid",
-        "email": "john.doe@example.com",
-        "designation": "Chief Technical Officer",
-        "organization": "Example.com",
+        "name": "",
+        "email": "support@vrest.io",
+        "designation": "API Automation Testing Tool",
+        "organization": "https://optimizory.com",
         "country": "India",
-        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
-        "twitterId": "fake.john.doe",
-        "facebookId": "fake.john.doe",
-        "githubId": "fake.john.doe",
-        "createdOn": "{{*}}"
+        "aboutMe": "",
+        "twitterId": "vrest_io",
+        "facebookId": "optimizory",
+        "githubId": "Optimizory",
+        "createdOn": "{{*}}",
+        "_id": "{{*}}"
       },
       "type": "json"
     },
@@ -64,16 +64,15 @@
     "queryParams": [],
     "body": {
       "content": {
-        "_id": null,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "designation": "Chief Technical Officer",
-        "organization": "Example.com",
+        "name": "vREST NG",
+        "email": "support@vrest.io",
+        "designation": "API Automation Testing Tool",
+        "organization": "https://optimizory.com",
         "country": "India",
-        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
-        "twitterId": "fake.john.doe",
-        "facebookId": "fake.john.doe",
-        "githubId": "fake.john.doe"
+        "aboutMe": "World's #1 Automated API Testing Tool.",
+        "twitterId": "vrest_io",
+        "facebookId": "optimizory",
+        "githubId": "Optimizory"
       },
       "type": "json",
       "formParams": []
