@@ -36,7 +36,7 @@ test:
     # make the downloadable binary as executable
     - chmod u+x $VREST_CACHE_FOLDER/vrest-ng-cli
     # Execute the vREST NG tests
-    - $VREST_CACHE_FOLDER/vrest-ng-cli run --projectdir=./test/scenario-tests --logger=xunit
+    - $VREST_CACHE_FOLDER/vrest-ng-cli run --projectdir=./test/ddt-tests --logger=xunit
     
   artifacts:
     when: always

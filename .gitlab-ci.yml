@@ -29,7 +29,7 @@ test:
     - npm install -g vrest-ng-cli@$vrest_version
 
     # Execute the vREST NG tests
-    - vrest-ng-cli run --projectdir=./test/scenario-tests --logger=xunit
+    - vrest-ng-cli run --projectdir=./test/ddt-tests --logger=xunit
     
   artifacts:
     when: always

@@ -65,7 +65,7 @@ steps:
   displayName: 'Start the application server'
 
 # [Use this step] To run vREST NG written Tests
-- script: /home/vsts/.cache/vrest/vrest-ng-cli run --projectdir=test/scenario-tests --logger=xunit
+- script: /home/vsts/.cache/vrest/vrest-ng-cli run --projectdir=test/ddt-tests --logger=xunit
   displayName: 'Run vREST NG Tests'
 
 # [Use this step] To publish test results to azure pipelines
