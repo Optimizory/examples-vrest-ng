@@ -94,16 +94,7 @@
       "Copy_of_Accept": "application/json, text/javascript, */*; q=0.01",
       "Copy_of_Copy_of_Accept": "application/json, text/javascript, */*; q=0.01"
     },
-    "queryParams": [
-      {
-        "name": "hello1",
-        "value": "world1"
-      },
-      {
-        "name": "hello2",
-        "value": "world2"
-      }
-    ],
+    "queryParams": [],
     "body": {
       "content": "",
       "type": "form-urlencoded",
