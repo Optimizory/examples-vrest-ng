@@ -1,7 +1,7 @@
 {
   "details": {
     "summary": "Validate whether Add Contact API works with all valid details",
-    "description": "This test case validates that Add Contact API works with all valid details.\n\nFor response validation, Default Validator is used. There are two dynamic properties in the response \"_id\" and \"createdOn\". \nWe have ignored those dynamic properties using special variable \"{{*}}\".\n\nWe have extracted the value of _id from actual response into a variable \"contactId\" using Variable Extractor functionality. And this \"contactId\" variable is used in subsequent requests. \n\nIn the same manner, you can also chain multiple requests.",
+    "description": "This test case validates that Add Contact API works with all valid details.",
     "waitForseconds": null,
     "runnable": true,
     "editable": true,
