@@ -2,7 +2,6 @@
   "details": {
     "summary": "Validate whether Add Contact API works with all valid details",
     "description": "This test case validates that Add Contact API works with all valid details.",
-    "waitForseconds": null,
     "runnable": true,
     "editable": true,
     "tags": [
@@ -10,7 +9,8 @@
       "admin"
     ],
     "condition": "",
-    "authorizationId": ""
+    "authorizationId": "",
+    "waitForSeconds": ""
   },
   "validation": {
     "assertions": [
@@ -33,12 +33,12 @@
     ],
     "expectedBody": {
       "content": {
-        "name": "",
+        "name": "vREST NG",
         "email": "support@vrest.io",
         "designation": "API Automation Testing Tool",
         "organization": "https://optimizory.com",
         "country": "India",
-        "aboutMe": "",
+        "aboutMe": "World's #1 Automated API Testing Tool.",
         "twitterId": "vrest_io",
         "facebookId": "optimizory",
         "githubId": "Optimizory",

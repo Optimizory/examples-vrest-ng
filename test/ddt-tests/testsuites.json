@@ -3,10 +3,10 @@
     "name": "Test Suite - CRUD APIs",
     "description": "CRUD APIs",
     "testCaseIds": [
-      "188351866",
-      "274032403",
-      "877416930",
-      "458296227"
+      "create_contact_api_test",
+      "find_contact_api_test",
+      "update_contact_api_test",
+      "delete_contact_api_test"
     ]
   },
   {
