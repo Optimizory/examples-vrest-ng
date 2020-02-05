@@ -2,7 +2,7 @@
   "details": {
     "summary": "Checking the list of contacts to validate whether the new record is in the list or not",
     "description": "Validating whether new record which we just inserted is returning via the List Contact API.\n\nFor response validation, we have used Default Validator.\n\nWe have ignored rest of the records in the expected body except the record which we want to validate. This is an example of partial response validation.",
-    "waitForseconds": null,
+    "waitForSeconds": null,
     "runnable": true,
     "editable": true,
     "tags": [

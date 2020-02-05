@@ -2,7 +2,7 @@
   "details": {
     "summary": "Validate whether Update Contact API should return error when setting invalid email for a contact",
     "description": "Example of negative test case. As we are setting invalid email for email field, the API should return in such case.\n\nThis API returns the static error response in such scenario. Such type of responses are proper candidate for Default Validator.",
-    "waitForseconds": null,
+    "waitForSeconds": null,
     "runnable": true,
     "editable": true,
     "tags": [

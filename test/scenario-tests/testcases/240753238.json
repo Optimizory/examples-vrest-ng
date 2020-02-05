@@ -2,7 +2,7 @@
   "details": {
     "summary": "Validate whether List Contacts API is working fine or not",
     "description": "This test case validates whether the List Contacts API is returning the valid records or not.\n\nResponse Validation: For response validation, we have chosen Default Validator. And in the expected body, we have ignored two dynamic properties \"_id\" and \"createdOn\".",
-    "waitForseconds": null,
+    "waitForSeconds": null,
     "runnable": true,
     "editable": true,
     "tags": [

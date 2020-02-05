@@ -2,7 +2,7 @@
   "details": {
     "summary": "Checking the list of contacts to check whether the newly added record is deleted or not",
     "description": "Validating whether the record which we just deleted is actually deleted in the database via validating the List Contact API again.\n\nFor response validation, we have used Default Validator.\n\nWe have ignored the dynamic properties \"_id\" and \"createdOn\" in the response by using special variable \"{{*}}\".",
-    "waitForseconds": null,
+    "waitForSeconds": null,
     "runnable": true,
     "editable": true,
     "tags": [
