@@ -2,15 +2,15 @@
   {
     "name": "Test Suite 1",
     "testCaseIds": [
-      "346140829",
-      "240753238",
-      "8552716",
-      "661572182",
-      "861203711",
-      "829649638",
-      "412164743",
-      "465565963",
-      "275066714"
+      "initialize_db_request",
+      "list_contact_api_test_initial",
+      "add_contact_api_test_with_valid_details",
+      "update_contact_api_test_with_invalid_email_id",
+      "update_contact_api_test_with_all_valid_details",
+      "view_contact_api_test_with_valid_id",
+      "list_contact_api_test_after_insert",
+      "delete_contact_api_test_with_valid_id",
+      "list_contact_api_test_after_delete"
     ]
   },
   {
