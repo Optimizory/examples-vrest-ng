@@ -1,0 +1,15 @@
+{
+  "name": "tests-using-npm-packages",
+  "description": "This vREST NG Project directory explains, how you may use npm packages in your api tests.",
+  "version": "1.0.0",
+  "keywords": [
+    "vREST NG",
+    "npm",
+    "utility methods"
+  ],
+  "author": "Dheeraj Aggarwal <dheeraj.aggarwal@optimizory.com>",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "2.24.0"
+  }
+}

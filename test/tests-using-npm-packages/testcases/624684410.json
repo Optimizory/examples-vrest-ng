@@ -1,0 +1,54 @@
+{
+  "details": {
+    "summary": "Validate Create Contact API",
+    "description": "",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      }
+    ],
+    "expectedBody": {
+      "content": {},
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "http://example.vrest.io/contacts/v2/test/contacts",
+    "method": "POST",
+    "headers": {},
+    "queryParams": [],
+    "body": {
+      "content": {
+        "name": "{{getMomentDate()}}",
+        "email": "john.doe@example.com",
+        "designation": "Chief Technical Officer",
+        "organization": "Example.com",
+        "country": "India",
+        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
+        "twitterId": "fake.john.doe",
+        "facebookId": "fake.john.doe",
+        "githubId": "fake.john.doe"
+      },
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "iterationResultVariable": "",
+  "resultVariable": "",
+  "extensions": {}
+}
