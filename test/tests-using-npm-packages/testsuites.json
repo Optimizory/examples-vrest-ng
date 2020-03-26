@@ -3,7 +3,7 @@
     "name": "Sample Test Suite",
     "description": "",
     "testCaseIds": [
-      "624684410"
+      "create_contact_api_test"
     ]
   }
 ]
