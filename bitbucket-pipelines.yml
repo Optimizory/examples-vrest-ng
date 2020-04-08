@@ -11,7 +11,7 @@ pipelines:
           - PORT=5090 node server.js & #Deploy and start your Test application Server
           - if [ ! -e "vrest/vrest_ng_cli_linux_1_2_0" ]; then wget -O vrest/vrest_ng_cli_linux_1_2_0 https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.2.0/vrest_ng_cli_linux_1_2_0 ; fi
           - chmod +x vrest/vrest_ng_cli_linux_1_2_0
-          - vrest/vrest_ng_cli_linux_1_2_0 --logger=xunit --logfilepath="test-reports/logs.xml" --projectdir="./test/scenario-tests"
+          - vrest/vrest_ng_cli_linux_1_2_0 run --logger=xunit --logfilepath="test-reports/logs.xml" --projectdir="./test/scenario-tests"
 definitions:
   caches:
     vrestcache: vrest
