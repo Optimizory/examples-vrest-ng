@@ -1,5 +1,5 @@
 # You can use any other version of node. This is only required in the case of a node.js application.
-image: node:6.9.4
+image: node:10.15.0
  
 pipelines:
   default:
@@ -8,6 +8,7 @@ pipelines:
           - node
           - vrestcache
         script: # Modify the commands below to build your repository.
+          - npm install
           - PORT=5090 node server.js & #Deploy and start your Test application Server
           - if [ ! -e "vrest/vrest_ng_cli_linux_1_2_0" ]; then wget -O vrest/vrest_ng_cli_linux_1_2_0 https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.2.0/vrest_ng_cli_linux_1_2_0 ; fi
           - chmod +x vrest/vrest_ng_cli_linux_1_2_0
