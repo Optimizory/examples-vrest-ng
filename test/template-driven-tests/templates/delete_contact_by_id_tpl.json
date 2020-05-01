@@ -1,0 +1,54 @@
+{
+  "details": {
+    "summary": "Delete contact by id",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "{{$data.statusCode}}"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Validator"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      }
+    ],
+    "expectedBody": {
+      "content": "{{$data.expectedBody}}",
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/definitions/{{$data.expectedSchema}}"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{$data.contactId}}",
+    "method": "DELETE",
+    "headers": {},
+    "queryParams": [],
+    "body": {
+      "content": {},
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "extensions": {}
+}

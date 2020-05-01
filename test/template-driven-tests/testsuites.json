@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Create API Test Suite",
+    "description": "Test Suite to validate tests related to Create API",
+    "testCaseIds": [
+      "create_contact_api_blank_name",
+      "create_contact_api_name_length_exceeds",
+      "create_contact_api_designation_length_exceeds",
+      "create_contact_api_organization_length_exceeds",
+      "create_contact_api_country_length_exceeds",
+      "create_contact_api_with_valid_fields"
+    ]
+  }
+]

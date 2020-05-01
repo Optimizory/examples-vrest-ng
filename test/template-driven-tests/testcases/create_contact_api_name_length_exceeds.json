@@ -1,0 +1,21 @@
+{
+  "$ref": "create_contact_api_tpl",
+  "$data": {
+    "statusCode": 400,
+    "expectedBody": {
+      "errors": {
+        "name": "field length cannot be greater than 35"
+      }
+    },
+    "expectedSchema": "Error",
+    "name": "Sample Name whose length is greater than the limit",
+    "email": "john.doe@example.com",
+    "designation": "Chief Technical Officer",
+    "organization": "example.com",
+    "country": "India",
+    "aboutMe": ""
+  },
+  "details": {
+    "summary": "Create Contact API Check when name length exceeds"
+  }
+}

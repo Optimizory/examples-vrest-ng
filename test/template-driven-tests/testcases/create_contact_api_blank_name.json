@@ -1,0 +1,21 @@
+{
+  "$ref": "create_contact_api_tpl",
+  "$data": {
+    "statusCode": 400,
+    "expectedBody": {
+      "errors": {
+        "name": "required field"
+      }
+    },
+    "expectedSchema": "Error",
+    "name": "",
+    "email": "john.doe@example.com",
+    "designation": "Chief Technical Officer",
+    "organization": "example.com",
+    "country": "India",
+    "aboutMe": ""
+  },
+  "details": {
+    "summary": "Create Contact API Check with blank name"
+  }
+}

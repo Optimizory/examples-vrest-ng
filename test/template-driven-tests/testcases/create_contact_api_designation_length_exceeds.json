@@ -1,0 +1,21 @@
+{
+  "$ref": "create_contact_api_tpl",
+  "$data": {
+    "statusCode": 400,
+    "expectedBody": {
+      "errors": {
+        "designation": "field length cannot be greater than 35"
+      }
+    },
+    "expectedSchema": "Error",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "designation": "Sample designation whose length is greater than the limit",
+    "organization": "example.com",
+    "country": "India",
+    "aboutMe": ""
+  },
+  "details": {
+    "summary": "Create Contact API Check when designation length exceeds"
+  }
+}

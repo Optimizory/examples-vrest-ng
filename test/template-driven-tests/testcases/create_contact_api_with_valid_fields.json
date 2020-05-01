@@ -1,0 +1,26 @@
+{
+  "$ref": "create_contact_api_tpl",
+  "$data": {
+    "statusCode": 200,
+    "expectedBody": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "designation": "Chief Technical Officer",
+      "organization": "example.com",
+      "country": "India",
+      "aboutMe": "",
+      "createdOn": "{{*}}",
+      "_id": "{{*}}"
+    },
+    "expectedSchema": "Contact",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "designation": "Chief Technical Officer",
+    "organization": "example.com",
+    "country": "India",
+    "aboutMe": ""
+  },
+  "details": {
+    "summary": "Create Contact API with all valid fields"
+  }
+}

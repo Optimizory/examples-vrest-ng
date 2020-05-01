@@ -1,0 +1,21 @@
+{
+  "$ref": "create_contact_api_tpl",
+  "$data": {
+    "statusCode": 400,
+    "expectedBody": {
+      "errors": {
+        "country": "field length cannot be greater than 35"
+      }
+    },
+    "expectedSchema": "Error",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "designation": "Chief Technical Officer",
+    "organization": "example.com",
+    "country": "Sample country whose length is greater than the limit",
+    "aboutMe": ""
+  },
+  "details": {
+    "summary": "Create Contact API Check when country length exceeds"
+  }
+}
