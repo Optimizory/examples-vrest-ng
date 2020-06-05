@@ -1,3 +1,6 @@
 {
-  "baseURL": "http://localhost:5090"
+  "baseURL": "http://localhost:5090",
+  "slackWebHookURL": "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX",
+  "slackUsername": "user.name",
+  "slackChannel": "vrest"
 }

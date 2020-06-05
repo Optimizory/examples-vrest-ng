@@ -16,8 +16,18 @@
     "hookIds": []
   },
   {
-    "name": "post-test-case-iteration-hook",
+    "name": "pre-test-case-local-hook",
     "hookIds": []
+  },
+  {
+    "name": "post-test-case-local-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-case-iteration-hook",
+    "hookIds": [
+      "send_slack_notification_on_api_test_failure_885803544"
+    ]
   },
   {
     "name": "post-test-case-hook",
