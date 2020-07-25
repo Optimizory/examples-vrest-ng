@@ -11,6 +11,7 @@ tags:
 paths:
   /contacts:
     post:
+      operationId: "addContact"
       tags:
       - "CRUD APIs"
       summary: "Create a new contact"
@@ -55,6 +56,7 @@ paths:
             $ref: "#/definitions/Contact"
   /contacts/{contactId}:
     get:
+      operationId: "findContactById"
       tags:
       - "CRUD APIs"
       summary: "Find contact by id"
@@ -76,6 +78,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     put:
+      operationId: "updateContactById"
       tags:
       - "CRUD APIs"
       summary: "Update contact by id"
@@ -123,6 +126,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     delete:
+      operationId: "deleteContactById"
       tags:
       - "CRUD APIs"
       summary: "Delete contact by id"
