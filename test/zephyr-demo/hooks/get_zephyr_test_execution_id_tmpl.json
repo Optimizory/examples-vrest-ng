@@ -3,10 +3,11 @@
     "summary": "Get Zephyr Test Execution Id",
     "description": "",
     "externalId": "",
-    "condition": "",
+    "condition": "{{$tc.details.externalId}}",
     "loopSource": "",
     "waitForSeconds": null,
-    "runnable": true
+    "runnable": true,
+    "authorizationId": "86317567"
   },
   "validation": {
     "assertions": [
@@ -39,8 +40,7 @@
     "url": "{{zephyrBaseURL}}/public/rest/api/1.0/executions",
     "method": "GET",
     "headers": {
-      "zapiAccessKey": "{{zapiAccessKey}}",
-      "Authorization": "JWT {{generateJiraToken({{$tc}}, '{{jiraAccountId}}', '{{zapiAccessKey}}', '{{zapiSecretKey}}','{{zephyrBaseURL}}',  'GET', '{{zephyrBaseURL}}/public/rest/api/1.0/executions?issueId={{$tc.details.externalId}}&&projectId={{jiraProjectId}}')}}"
+      "zapiAccessKey": "{{zapiAccessKey}}"
     },
     "queryParams": [
       {

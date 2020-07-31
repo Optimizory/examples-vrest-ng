@@ -3,10 +3,11 @@
     "summary": "Update Zephyr Test Execution Status",
     "description": "",
     "externalId": "",
-    "condition": "",
+    "condition": "{{$tc.details.externalId}}",
     "loopSource": "",
     "waitForSeconds": null,
-    "runnable": true
+    "runnable": true,
+    "authorizationId": "86317567"
   },
   "validation": {
     "assertions": [
@@ -39,8 +40,7 @@
     "url": "{{zephyrBaseURL}}/public/rest/api/1.0/execution/{{executionId}}",
     "method": "PUT",
     "headers": {
-      "zapiAccessKey": "{{zapiAccessKey}}",
-      "Authorization": "JWT {{generateJiraToken({{$tc}}, '{{jiraAccountId}}', '{{zapiAccessKey}}', '{{zapiSecretKey}}','{{zephyrBaseURL}}',  'PUT', '{{zephyrBaseURL}}/public/rest/api/1.0/execution/{{executionId}}')}}"
+      "zapiAccessKey": "{{zapiAccessKey}}"
     },
     "queryParams": [],
     "body": {
