@@ -1,0 +1,60 @@
+{
+  "details": {
+    "summary": "Successful Test Case",
+    "description": "",
+    "externalId": "10008",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "args": {
+          "param1": "value1"
+        },
+        "{{*}}": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/get",
+    "method": "GET",
+    "headers": {},
+    "queryParams": [
+      {
+        "name": "param1",
+        "value": "value1"
+      }
+    ],
+    "body": {
+      "content": {},
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "iterationResultVariable": "",
+  "resultVariable": "",
+  "extensions": {}
+}

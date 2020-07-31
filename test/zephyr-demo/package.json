@@ -1,0 +1,16 @@
+{
+  "name": "zephyr-demo",
+  "description": "This vREST NG Project directory demonstrates the integration with zephyr",
+  "version": "1.0.0",
+  "keywords": [
+    "vREST NG",
+    "npm",
+    "zephyr integration"
+  ],
+  "author": "Dheeraj Aggarwal <dheeraj.aggarwal@optimizory.com>",
+  "license": "MIT",
+  "dependencies": {
+    "atlassian-jwt": "^1.0.3",
+    "moment": "2.24.0"
+  }
+}

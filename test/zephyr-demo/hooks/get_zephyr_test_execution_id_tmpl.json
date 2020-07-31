@@ -1,0 +1,70 @@
+{
+  "details": {
+    "summary": "Get Zephyr Test Execution Id",
+    "description": "",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "{{*}}": "{{*}}",
+        "executions": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{zephyrBaseURL}}/public/rest/api/1.0/executions",
+    "method": "GET",
+    "headers": {
+      "zapiAccessKey": "{{zapiAccessKey}}",
+      "Authorization": "JWT {{generateJiraToken({{$tc}}, '{{jiraAccountId}}', '{{zapiAccessKey}}', '{{zapiSecretKey}}','{{zephyrBaseURL}}',  'GET', '{{zephyrBaseURL}}/public/rest/api/1.0/executions?issueId={{$tc.details.externalId}}&&projectId={{jiraProjectId}}')}}"
+    },
+    "queryParams": [
+      {
+        "name": "projectId",
+        "value": "{{jiraProjectId}}"
+      },
+      {
+        "name": "issueId",
+        "value": "{{$tc.details.externalId}}"
+      }
+    ],
+    "body": {
+      "content": {},
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [
+    {
+      "name": "executionId",
+      "path": "{{getTestExecutionId('{{projectVersionId}}', '{{testCycleId}}')}}"
+    }
+  ],
+  "iterationResultVariable": "",
+  "resultVariable": "",
+  "extensions": {}
+}

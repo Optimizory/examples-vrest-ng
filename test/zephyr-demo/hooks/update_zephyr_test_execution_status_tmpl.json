@@ -1,0 +1,65 @@
+{
+  "details": {
+    "summary": "Update Zephyr Test Execution Status",
+    "description": "",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "{{*}}": "{{*}}",
+        "execution": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {},
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{zephyrBaseURL}}/public/rest/api/1.0/execution/{{executionId}}",
+    "method": "PUT",
+    "headers": {
+      "zapiAccessKey": "{{zapiAccessKey}}",
+      "Authorization": "JWT {{generateJiraToken({{$tc}}, '{{jiraAccountId}}', '{{zapiAccessKey}}', '{{zapiSecretKey}}','{{zephyrBaseURL}}',  'PUT', '{{zephyrBaseURL}}/public/rest/api/1.0/execution/{{executionId}}')}}"
+    },
+    "queryParams": [],
+    "body": {
+      "content": {
+        "status": {
+          "id": "{{getZephyrTestStatus({{$tc.result.isExecuted}}, {{$tc.result.isPassed}})}}"
+        },
+        "id": "{{executionId}}",
+        "projectId": "{{number('{{jiraProjectId}}')}}",
+        "issueId": "{{number('{{$tc.details.externalId}}')}}",
+        "cycleId": "{{testCycleId}}",
+        "versionId": "{{number('{{projectVersionId}}')}}"
+      },
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "iterationResultVariable": "",
+  "resultVariable": "",
+  "extensions": {}
+}

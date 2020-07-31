@@ -1,0 +1,13 @@
+{
+  "jiraCloudURL": "https://xyz.atlassian.net/",
+  "zephyrBaseURL": "https://prod-api.zephyr4jiracloud.com/connect",
+  "jiraUserName": "user@example.com",
+  "jiraApiToken": "JIRA_API_TOKEN",
+  "zapiAccessKey": "ZAPI_ACCESS_KEY",
+  "zapiSecretKey": "ZAPI_SECRET_KEY",
+  "jiraProjectId": 10001,
+  "projectVersionId": 10000,
+  "testCycleId": "TEST_CYCLE_ID",
+  "baseURL": "https://httpbin.org",
+  "jiraAccountId": "JIRA_ACCOUNT_ID"
+}
