@@ -1,0 +1,9 @@
+{
+  "name": "JWT Auth",
+  "authType": "Raw",
+  "details": {
+    "default": {
+      "authHeader": "{{generateJwtToken()}}"
+    }
+  }
+}
