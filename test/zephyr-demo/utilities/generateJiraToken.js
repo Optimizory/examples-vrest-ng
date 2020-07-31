@@ -1,7 +1,7 @@
 (function(){
-
-	var aFunction = function(tc, jiraAccountId, zapiAccessKey, zapiSecret, zephyrBaseURL, method, url){
-		let jwt = require('atlassian-jwt');
+  
+  var aFunction = function(tc, jiraAccountId, zapiAccessKey, zapiSecret, zephyrBaseURL, method, url){
+    let jwt = require('atlassian-jwt');
     let moment = require('moment');
     const now = moment().utc();
     const req = jwt.fromMethodAndUrl(method, url);
@@ -14,7 +14,6 @@
     };
     
     return jwt.encode(tokenData, zapiSecret);
-	};
-
-	return aFunction;
+  };
+  return aFunction;
 })();
