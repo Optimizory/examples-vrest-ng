@@ -97,5 +97,6 @@
       "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
     }
   },
-  "resultVariable": "hello1_1"
+  "resultVariable": "hello1_1",
+  "$data": {}
 }

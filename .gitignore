@@ -6,4 +6,5 @@ test/integration-demo
 test/ddt-community
 test/demo-project
 test/challenges
+test/zipcode-node
 *.xlsx
