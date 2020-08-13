@@ -5,3 +5,5 @@ db.json
 test/integration-demo
 test/ddt-community
 test/demo-project
+test/challenges
+*.xlsx
