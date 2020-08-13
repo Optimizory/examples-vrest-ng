@@ -83,5 +83,6 @@
       "name": "contactId",
       "path": "_id"
     }
-  ]
+  ],
+  "$data": {}
 }
