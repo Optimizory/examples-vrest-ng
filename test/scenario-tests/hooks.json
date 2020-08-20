@@ -25,9 +25,7 @@
   },
   {
     "name": "post-test-case-iteration-hook",
-    "hookIds": [
-      "send_slack_notification_on_api_test_failure_885803544"
-    ]
+    "hookIds": []
   },
   {
     "name": "post-test-case-hook",
