@@ -1,16 +1,43 @@
 {
-  "allOf": [
-    {
-      "$ref": "#/definitions/ContactWithoutId"
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string"
     },
-    {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "string"
-        }
-      }
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "aboutMe": {
+      "type": "string"
+    },
+    "twitterId": {
+      "type": "string"
+    },
+    "facebookId": {
+      "type": "string"
+    },
+    "githubId": {
+      "type": "string"
+    },
+    "linkedInId": {
+      "type": "string"
+    },
+    "createdOn": {
+      "type": "string"
     }
-  ],
+  },
+  "additionalProperties": false,
   "version": "swagger2.0"
 }

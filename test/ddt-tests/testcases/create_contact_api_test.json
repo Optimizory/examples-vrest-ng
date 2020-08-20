@@ -51,12 +51,7 @@
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "queryParams": [
-      {
-        "name": "param1",
-        "value": "value1"
-      }
-    ],
+    "queryParams": [],
     "body": {
       "content": null,
       "type": "form-urlencoded",

@@ -3,5 +3,6 @@
   "items": {
     "$ref": "#/definitions/Contact"
   },
+  "additionalProperties": false,
   "version": "swagger2.0"
 }

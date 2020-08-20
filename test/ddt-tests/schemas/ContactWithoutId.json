@@ -29,5 +29,6 @@
       "type": "string"
     }
   },
+  "additionalProperties": false,
   "version": "swagger2.0"
 }
