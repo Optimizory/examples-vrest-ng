@@ -14,7 +14,7 @@ You may just import any of these sample projects in vREST NG application to quic
 * Just add any of the project directory in your vREST NG Workspace area.
 * For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
 
-![](../../assets/setup-project.png)
+![](../assets/setup-project.png)
 
 * Now, you can explore this Project on your own.
 
