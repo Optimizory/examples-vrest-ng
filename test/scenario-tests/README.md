@@ -26,7 +26,7 @@ Let us see how you can do that,
 
 * Now, you can explore this Project on your own.
 
-## Step 3 - Run the tests
+## Step 4 - Run the tests
 * Now you can click on "Run All" button available in left pane to run all the test cases.
 
 For more information on how you may chain multiple API requests to validate a complex scenario, please visit this [**guide link**](https://ng.vrest.io/docs/app/variables/extract-variables-from-api-response.html). 
