@@ -11,13 +11,13 @@ This project directory will demonstrate how you may use CSV files to feed data t
 
 vREST NG provides you the ability to perform one of the most productive approach in the world of testing. Data Driven Testing is an approach, which can save you a lot of time, effort, and other resources.
 
-We have created this sample test data using which you can easily get started with Data Driven Testing, just by importing this as a Project in your vREST NG Workspace.
+We have created this sample project using which you can easily get started with Data Driven Testing, just by importing this as a Project in your vREST NG Workspace.
 
 Let us see how you can do that,
 
 ## Step 1 - Download & Install vREST NG
 * First of all, you need to have vREST NG Application installed on your system.
-* Download it from [HERE](https://ng.vrest.io) (for your OS).
+* Download it from our [website](https://ng.vrest.io) (for your OS).
 
 ## Step 2 - Clone this repository & run the sample test application
 * You can clone this entire repository and keep it anywhere you want in your system. 
@@ -36,6 +36,7 @@ Let us see how you can do that,
 * Now you can make changes and simply save the csv file. The changes will get automatically reflected in vREST NG without any refresh or upload.
 * Now you can click on ![](../../assets/run-button.png) button available in left pane to run all the test cases.
 
+Below is the sample screenshot of one of the CSV file:
 ![](../../assets/excel-sheet.png)
 
 
