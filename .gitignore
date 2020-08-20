@@ -8,4 +8,5 @@ test/demo-project
 test/challenges
 test/zipcode-node
 test/spec-driven
+**/config.json
 *.xlsx
