@@ -3,11 +3,11 @@
     "summary": "Update Zephyr Test Execution Status",
     "description": "",
     "externalId": "",
-    "condition": "{{$tc.details.externalId}}",
+    "condition": "{{zephyrForJiraCloudCondition()}}",
     "loopSource": "",
     "waitForSeconds": null,
     "runnable": true,
-    "authorizationId": "86317567"
+    "authorizationId": "jira_jwt_auth"
   },
   "validation": {
     "assertions": [
@@ -46,13 +46,14 @@
     "body": {
       "content": {
         "status": {
-          "id": "{{getZephyrTestStatus({{$tc.result.isExecuted}}, {{$tc.result.isPassed}})}}"
+          "id": "{{getZephyrTestStatus()}}"
         },
         "id": "{{executionId}}",
         "projectId": "{{number('{{jiraProjectId}}')}}",
         "issueId": "{{number('{{$tc.details.externalId}}')}}",
         "cycleId": "{{testCycleId}}",
-        "versionId": "{{number('{{projectVersionId}}')}}"
+        "versionId": "{{number('{{projectVersionId}}')}}",
+        "comment": "{{getCommentForZephyrExecution()}}"
       },
       "type": "json",
       "formParams": []

@@ -26,8 +26,8 @@
   {
     "name": "post-test-case-iteration-hook",
     "hookIds": [
-      "get_zephyr_test_execution_id_tmpl",
-      "update_zephyr_test_execution_status_tmpl"
+      "get_zephyr_test_execution_id_hook",
+      "update_zephyr_test_execution_status_hook"
     ]
   },
   {

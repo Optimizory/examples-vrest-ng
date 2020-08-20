@@ -1,0 +1,9 @@
+{
+  "name": "Jira JWT Auth",
+  "authType": "Raw",
+  "details": {
+    "default": {
+      "authHeader": "{{generateJiraJwtToken()}}"
+    }
+  }
+}
