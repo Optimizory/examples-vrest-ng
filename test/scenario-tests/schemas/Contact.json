@@ -1,132 +1,44 @@
 {
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
   "type": "object",
-  "title": "The Root Schema",
+  "additionalProperties": false,
+  "properties": {
+    "_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "aboutMe": {
+      "type": "string"
+    },
+    "twitterId": {
+      "type": "string"
+    },
+    "facebookId": {
+      "type": "string"
+    },
+    "githubId": {
+      "type": "string"
+    },
+    "createdOn": {
+      "type": "string"
+    }
+  },
   "required": [
     "_id",
     "name",
-    "email",
-    "designation",
-    "organization",
-    "country",
-    "aboutMe",
-    "twitterId",
-    "facebookId",
-    "githubId",
-    "createdOn"
-  ],
-  "properties": {
-    "_id": {
-      "$id": "#/properties/_id",
-      "type": "string",
-      "title": "The _id Schema",
-      "default": "",
-      "examples": [
-        "5ddf8e1f4aee540b08000690"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "name": {
-      "$id": "#/properties/name",
-      "type": "string",
-      "title": "The Name Schema",
-      "default": "",
-      "examples": [
-        "John Doe"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "email": {
-      "$id": "#/properties/email",
-      "type": "string",
-      "title": "The Email Schema",
-      "default": "",
-      "examples": [
-        "john.doe@example.com"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "designation": {
-      "$id": "#/properties/designation",
-      "type": "string",
-      "title": "The Designation Schema",
-      "default": "",
-      "examples": [
-        "Chief Technical Officer"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "organization": {
-      "$id": "#/properties/organization",
-      "type": "string",
-      "title": "The Organization Schema",
-      "default": "",
-      "examples": [
-        "Example.com"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "country": {
-      "$id": "#/properties/country",
-      "type": "string",
-      "title": "The Country Schema",
-      "default": "",
-      "examples": [
-        "India"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "aboutMe": {
-      "$id": "#/properties/aboutMe",
-      "type": "string",
-      "title": "The Aboutme Schema",
-      "default": "",
-      "examples": [
-        "My name can be used as a placeholder name and I don't have any identity."
-      ],
-      "pattern": "^(.*)$"
-    },
-    "twitterId": {
-      "$id": "#/properties/twitterId",
-      "type": "string",
-      "title": "The Twitterid Schema",
-      "default": "",
-      "examples": [
-        "fake.john.doe"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "facebookId": {
-      "$id": "#/properties/facebookId",
-      "type": "string",
-      "title": "The Facebookid Schema",
-      "default": "",
-      "examples": [
-        "fake.john.doe"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "githubId": {
-      "$id": "#/properties/githubId",
-      "type": "string",
-      "title": "The Githubid Schema",
-      "default": "",
-      "examples": [
-        "fake.john.doe"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "createdOn": {
-      "$id": "#/properties/createdOn",
-      "type": "string",
-      "title": "The Createdon Schema",
-      "default": "",
-      "examples": [
-        "2019-11-28T09:06:39.651Z"
-      ],
-      "pattern": "^(.*)$"
-    }
-  }
+    "email"
+  ]
 }

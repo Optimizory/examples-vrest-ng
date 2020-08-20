@@ -45,7 +45,9 @@
       "type": "json"
     },
     "expectedSchema": {
-      "content": {},
+      "content": {
+        "$ref": "#/definitions/Contact"
+      },
       "type": "json"
     }
   },
