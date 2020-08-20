@@ -23,7 +23,7 @@ Let us see how you can do that,
 * You can clone this entire repository and keep it anywhere you want in your system. 
 * And follow the instructions as specified at this [link](https://github.com/Optimizory/examples-vrest-ng).
 
-## step 3 - Open this `ddt-tests` directory as a Project in vREST NG
+## Step 3 - Open this `ddt-tests` directory as a Project in vREST NG
 * Just add this project directory `ddt-tests` in your vREST NG Workspace.
 * For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
 
@@ -31,7 +31,7 @@ Let us see how you can do that,
 
 * Now, you can explore this Project on your own.
 
-## Step 3 - Enjoy the live editing of CSV file
+## Step 4 - Enjoy the live editing of CSV file
 * You may find the multiple CSV files inside the `data` directory. 
 * Now you can make changes and simply save the csv file. The changes will get automatically reflected in vREST NG without any refresh or upload.
 * Now you can click on ![](../../assets/run-button.png) button available in left pane to run all the test cases.

@@ -1,4 +1,4 @@
-*This is a sample project to demonstrate validation of complex scenarios using vREST NG.*
+*This is a sample project to demonstrate the validation of complex scenarios using vREST NG.*
 
 # Scenario based Testing (using vREST NG) 
 
@@ -18,7 +18,7 @@ Let us see how you can do that,
 * You can clone this entire repository and keep it anywhere you want in your system. 
 * And follow the instructions as specified at this [link](https://github.com/Optimizory/examples-vrest-ng).
 
-## step 3 - Open this `scenario-tests` directory as a Project in vREST NG
+## Step 3 - Open this `scenario-tests` directory as a Project in vREST NG
 * Just add this project directory `scenario-tests` in your vREST NG Workspace.
 * For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
 
@@ -27,4 +27,6 @@ Let us see how you can do that,
 * Now, you can explore this Project on your own.
 
 ## Step 3 - Run the tests
-* Now you can click on ![](../../assets/run-button.png) button available in left pane to run all the test cases.
+* Now you can click on "Run All" button available in left pane to run all the test cases.
+
+For more information on how you may chain multiple API requests to validate a complex scenario, please visit this [**guide link**](https://ng.vrest.io/docs/app/variables/extract-variables-from-api-response.html). 
