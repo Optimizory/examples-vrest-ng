@@ -10,3 +10,5 @@ test/zipcode-node
 test/spec-driven
 **/config.json
 *.xlsx
+test/.gitignore
+
