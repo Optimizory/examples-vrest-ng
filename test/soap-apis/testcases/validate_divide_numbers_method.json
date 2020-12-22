@@ -1,0 +1,36 @@
+{
+  "details": {
+    "summary": "Validate Divide Numbers Method"
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n  <soap:Body>\n    <DivideResponse xmlns=\"http://tempuri.org/\">\n      <DivideResult>__STAR_VAR__</DivideResult>\n    </DivideResponse>\n  </soap:Body>\n</soap:Envelope>",
+      "type": "xml"
+    }
+  },
+  "request": {
+    "url": "http://www.dneonline.com/calculator.asmx",
+    "method": "POST",
+    "body": {
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Divide xmlns=\"http://tempuri.org/\">\n      <intA>12</intA>\n      <intB>3</intB>\n    </Divide>\n  </soap:Body>\n</soap:Envelope>",
+      "type": "xml"
+    },
+    "headers": {
+      "Content-Type": "text/xml"
+    }
+  }
+}

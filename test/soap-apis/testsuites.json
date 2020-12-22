@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Sample Test Suite",
+    "description": "",
+    "testCaseIds": [
+      "validate_add_numbers_method_soap_1_1",
+      "validate_add_numbers_method_soap_1_2",
+      "validate_divide_numbers_method",
+      "validate_multiply_numbers_method",
+      "validate_subtract_numbers_method"
+    ]
+  }
+]
