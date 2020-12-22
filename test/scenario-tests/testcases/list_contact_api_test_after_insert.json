@@ -2,9 +2,6 @@
   "details": {
     "summary": "Checking the list of contacts to validate whether the new record is in the list or not",
     "description": "Validating whether new record which we just inserted is returning via the List Contact API.\n\nFor response validation, we have used Default Validator.\n\nWe have ignored rest of the records in the expected body except the record which we want to validate. This is an example of partial response validation.",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "tags": [
       "positive"
     ]
@@ -43,10 +40,6 @@
         "{{*}}"
       ],
       "type": "json"
-    },
-    "expectedSchema": {
-      "content": {},
-      "type": "json"
     }
   },
   "request": {
@@ -54,13 +47,6 @@
     "method": "GET",
     "headers": {
       "Accept": "application/json, text/javascript, */*; q=0.01"
-    },
-    "queryParams": [],
-    "body": {
-      "content": "",
-      "type": "others",
-      "formParams": []
     }
-  },
-  "variables": []
+  }
 }

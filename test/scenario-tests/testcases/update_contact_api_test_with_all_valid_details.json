@@ -2,9 +2,6 @@
   "details": {
     "summary": "Validate whether Update Contact API by ID works properly with all valid details",
     "description": "Example of Positive Test Case. Validating whether providing all the valid details to Update Contact API is working fine or not.",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "tags": [
       "positive"
     ]
@@ -58,7 +55,6 @@
       "Accept": "application/json, text/javascript, */*; q=0.01",
       "Content-Type": "application/json"
     },
-    "queryParams": [],
     "body": {
       "content": {
         "name": "John Doe",
@@ -72,9 +68,7 @@
         "githubId": "fake.john.doe",
         "createdOn": "2014-05-03T06:28:45.479Z"
       },
-      "type": "json",
-      "formParams": []
+      "type": "json"
     }
-  },
-  "variables": []
+  }
 }

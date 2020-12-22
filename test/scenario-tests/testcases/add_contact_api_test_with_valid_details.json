@@ -2,15 +2,10 @@
   "details": {
     "summary": "Validate whether Add Contact API works with all valid details",
     "description": "This test case validates that Add Contact API works with all valid details.",
-    "runnable": true,
-    "editable": true,
     "tags": [
       "positive",
       "admin"
-    ],
-    "condition": "",
-    "authorizationId": "",
-    "waitForSeconds": ""
+    ]
   },
   "validation": {
     "assertions": [
@@ -61,7 +56,6 @@
       "Accept": "application/json, text/javascript, */*; q=0.01",
       "Content-Type": "application/json"
     },
-    "queryParams": [],
     "body": {
       "content": {
         "name": "vREST NG",
@@ -74,8 +68,7 @@
         "facebookId": "optimizory",
         "githubId": "Optimizory"
       },
-      "type": "json",
-      "formParams": []
+      "type": "json"
     }
   },
   "variables": [
@@ -83,6 +76,5 @@
       "name": "contactId",
       "path": "_id"
     }
-  ],
-  "$data": {}
+  ]
 }
