@@ -1,16 +1,9 @@
 {
   "details": {
     "summary": "Creates a new contact",
-    "description": "",
-    "condition": "",
-    "loopSource": "",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "tags": [
       "CRUD APIs"
-    ],
-    "authorizationId": null
+    ]
   },
   "validation": {
     "assertions": [
@@ -45,7 +38,6 @@
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "queryParams": [],
     "body": {
       "content": null,
       "type": "form-urlencoded",
@@ -77,7 +69,6 @@
       ]
     }
   },
-  "variables": [],
   "extensions": {
     "vrest-excel-plugin": {
       "testDataFilePath": ""

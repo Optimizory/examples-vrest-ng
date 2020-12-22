@@ -1,12 +1,6 @@
 {
   "details": {
-    "summary": "Validate Create Contact API",
-    "description": "",
-    "externalId": "",
-    "condition": "",
-    "loopSource": "",
-    "waitForSeconds": null,
-    "runnable": true
+    "summary": "Validate Create Contact API"
   },
   "validation": {
     "assertions": [
@@ -16,21 +10,11 @@
         "operator": "equalToNumber",
         "expectedValue": "200"
       }
-    ],
-    "expectedBody": {
-      "content": {},
-      "type": "json"
-    },
-    "expectedSchema": {
-      "content": {},
-      "type": "json"
-    }
+    ]
   },
   "request": {
-    "url": "http://example.vrest.io/contacts/v2/test/contacts",
+    "url": "http://localhost:5090/contacts",
     "method": "POST",
-    "headers": {},
-    "queryParams": [],
     "body": {
       "content": {
         "name": "{{getMomentDate()}}",
@@ -43,12 +27,7 @@
         "facebookId": "fake.john.doe",
         "githubId": "fake.john.doe"
       },
-      "type": "json",
-      "formParams": []
+      "type": "json"
     }
-  },
-  "variables": [],
-  "iterationResultVariable": "",
-  "resultVariable": "",
-  "extensions": {}
+  }
 }
