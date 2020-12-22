@@ -1,15 +1,10 @@
 {
   "details": {
     "summary": "Delete contact by id",
-    "condition": "",
     "loopSource": "{{data}}",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "tags": [
       "CRUD APIs"
-    ],
-    "authorizationId": null
+    ]
   },
   "validation": {
     "assertions": [
@@ -40,16 +35,8 @@
   },
   "request": {
     "url": "{{baseURL}}/contacts/{{data.$.contactId}}",
-    "method": "DELETE",
-    "headers": {},
-    "queryParams": [],
-    "body": {
-      "content": {},
-      "type": "json",
-      "formParams": []
-    }
+    "method": "DELETE"
   },
-  "variables": [],
   "extensions": {
     "vrest-excel-plugin": {
       "testDataFilePath": "{{$projectDir}}/data/delete_contact_by_id.csv"

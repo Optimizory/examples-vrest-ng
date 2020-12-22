@@ -1,16 +1,10 @@
 {
   "details": {
     "summary": "Create a new contact",
-    "description": "",
-    "condition": "",
     "loopSource": "{{data}}",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "tags": [
       "CRUD APIs"
-    ],
-    "authorizationId": null
+    ]
   },
   "validation": {
     "assertions": [
@@ -51,7 +45,6 @@
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "queryParams": [],
     "body": {
       "content": null,
       "type": "form-urlencoded",
@@ -83,7 +76,6 @@
       ]
     }
   },
-  "variables": [],
   "extensions": {
     "vrest-excel-plugin": {
       "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact.csv"
@@ -91,7 +83,5 @@
     "vrest-command-executor-plugin": {
       "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
     }
-  },
-  "resultVariable": "hello1_1",
-  "$data": {}
+  }
 }
