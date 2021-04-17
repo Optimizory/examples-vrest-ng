@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Test') { 
       steps {
-        sh 'PORT=5090 npm run start &'
+        sh 'npm run start &'
         sh 'npm install vrest-ng-cli@$vrest_version'
         sh 'npx vrest-ng-cli run --projectdir=./test/ddt-tests --logger=xunit' 
       }
