@@ -78,7 +78,7 @@
   },
   "extensions": {
     "vrest-excel-plugin": {
-      "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact.csv"
+      "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact.xlsx"
     },
     "vrest-command-executor-plugin": {
       "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
