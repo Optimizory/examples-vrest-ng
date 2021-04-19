@@ -10,10 +10,10 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - npm install
           - PORT=5090 node server.js & #Deploy and start your Test application Server
-          - if [ ! -e "vrest/vrest_ng_cli_linux_1_2_0" ]; then wget -O vrest/vrest_ng_cli_linux_1_2_0 https://github.com/Optimizory/vrest-ng-cli/releases/download/v1.2.0/vrest_ng_cli_linux_1_2_0 ; fi
-          - chmod +x vrest/vrest_ng_cli_linux_1_2_0
+          - if [ ! -e "vrest/vrest_ng_cli_linux_2_0_0" ]; then wget -O vrest/vrest_ng_cli_linux_2_0_0 https://github.com/Optimizory/vrest-ng-cli/releases/download/v2.0.0/vrest_ng_cli_linux_2_0_0 ; fi
+          - chmod +x vrest/vrest_ng_cli_linux_2_0_0
           - mkdir -p ./test-reports
-          - vrest/vrest_ng_cli_linux_1_2_0 run --logger=xunit --logfilepath="test-reports/logs.xml" --projectdir="./test/ddt-tests"
+          - vrest/vrest_ng_cli_linux_2_0_0 run --logger=xunit --logfilepath="test-reports/logs.xml" --projectdir="./test/ddt-tests"
 definitions:
   caches:
     vrestcache: vrest
