@@ -21,8 +21,7 @@ pipeline {
         sh 'npm run start &'
         sh 'mkdir -p $HOME/vrest'
         sh 'wget -O $HOME/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$vrest_version/vrest_ng_cli_linux_$vrest_uversion'
-        sh 'chmod +x $HOME/vrest/vrest-ng-cli'
-        ./vrest/vrest-ng-cli 'run --projectdir=./test/ddt-tests --env=default --logger=xunit'
+        sh 'chmod +x $HOME/vrest/vrest-ng-cli && $HOME/vrest/vrest-ng-cli run --projectdir=./test/ddt-tests --env=default --logger=xunit'
       }
     }
   }
