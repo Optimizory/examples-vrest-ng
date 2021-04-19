@@ -23,7 +23,7 @@ pipeline {
         sh 'wget -O $HOME/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$vrest_version/vrest_ng_cli_linux_$vrest_uversion'
         sh 'chmod +x $HOME/vrest/vrest-ng-cli'
         sh 'ls -ltr $HOME/vrest'
-        sh '$HOME/vrest/vrest-ng-cli run' 
+        sh '$HOME/vrest/vrest-ng-cli --help' 
       }
     }
   }
