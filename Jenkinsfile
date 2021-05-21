@@ -1,6 +1,5 @@
 pipeline {
   agent {
-    label 'docker' 
     docker {
       image 'node:9'
       args '-p 5090:5090'
