@@ -18,6 +18,7 @@ pipeline {
     }
     stage('Test') { 
       steps {
+        sh 'USER root'
         sh 'apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget'
         sh 'npm run start &'
         sh 'mkdir -p $HOME/vrest'
