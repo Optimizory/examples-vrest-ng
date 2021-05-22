@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Test') { 
       steps {
-        sh 'apk --no-cache add openssl wget'
+        sh 'apk update && apk add ca-certificates && update-ca-certificates && apk --no-cache add openssl wget'
         sh 'npm run start &'
         sh 'mkdir -p $HOME/vrest'
         sh 'wget -O $HOME/vrest/vrest-ng-cli -q https://github.com/Optimizory/vrest-ng-cli/releases/download/v$vrest_version/vrest_ng_cli_alpine_$vrest_uversion'
