@@ -25,7 +25,6 @@ pipeline {
         sh '$HOME/vrest/vrest-ng-cli run --projectdir="./test/ddt-tests" --env=default --logger=xunit'
       }
     }
-    input 'stop'
   }
   post {
     always {

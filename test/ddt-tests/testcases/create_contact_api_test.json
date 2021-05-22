@@ -20,12 +20,6 @@
       {
         "source": "textBody",
         "operator": "Default Schema Validator"
-      },
-      {
-        "source": "responseTime",
-        "property": null,
-        "operator": "lessThan",
-        "expectedValue": "500"
       }
     ],
     "expectedBody": {
