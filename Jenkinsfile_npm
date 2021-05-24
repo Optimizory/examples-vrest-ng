@@ -6,7 +6,7 @@ pipeline {
     }
   }
   environment {
-    vrest_version = '2.0.0' 
+    vrest_version = '1.9.2' 
     HOME = '.'
   }
   stages {
@@ -19,7 +19,7 @@ pipeline {
       steps {
         sh 'npm run start &'
         sh 'npm install vrest-ng-cli@$vrest_version'
-        sh 'npx vrest-ng-cli run --projectdir=./test/ddt-tests --env=default --logger=xunit' 
+        sh 'npx vrest-ng-cli run --projectdir=./test/scenario-tests --env=default --logger=xunit' 
       }
     }
   }

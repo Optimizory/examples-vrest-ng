@@ -9,6 +9,18 @@
         "property": null,
         "operator": "equalToNumber",
         "expectedValue": "200"
+      },
+      {
+        "source": "jsonBody",
+        "property": "name",
+        "operator": "doesNotContain",
+        "expectedValue": "{{"
+      },
+      {
+        "source": "jsonBody",
+        "property": "name",
+        "operator": "isNotEmpty",
+        "expectedValue": ""
       }
     ]
   },
@@ -17,12 +29,12 @@
     "method": "POST",
     "body": {
       "content": {
-        "name": "{{getMomentDate()}}",
-        "email": "john.doe@example.com",
-        "designation": "Chief Technical Officer",
-        "organization": "Example.com",
-        "country": "India",
-        "aboutMe": "My name can be used as a placeholder name and I don't have any identity.",
+        "name": "{{FakerLib().name.findName()}}",
+        "email": "{{FakerLib().internet.email()}}",
+        "designation": "{{FakerLib().name.jobTitle()}}",
+        "organization": "{{FakerLib().company.companyName()}}",
+        "country": "{{FakerLib().address.country()}}",
+        "aboutMe": "{{FakerLib().random.words()}}",
         "twitterId": "fake.john.doe",
         "facebookId": "fake.john.doe",
         "githubId": "fake.john.doe"

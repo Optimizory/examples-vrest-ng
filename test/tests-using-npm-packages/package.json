@@ -10,6 +10,6 @@
   "author": "Dheeraj Aggarwal <dheeraj.aggarwal@optimizory.com>",
   "license": "ISC",
   "dependencies": {
-    "moment": "2.24.0"
+    "faker": "^5.4.0"
   }
 }

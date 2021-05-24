@@ -13,10 +13,5 @@
     "name": "Test Suite 2",
     "description": null,
     "testCaseIds": []
-  },
-  {
-    "name": "Test Suite 3",
-    "description": null,
-    "testCaseIds": []
   }
 ]
