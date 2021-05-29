@@ -28,7 +28,7 @@
     ],
     "expectedBody": {
       "content": {
-        "name": "vREST NG",
+        "name": "vREST NG Application",
         "email": "support@vrest.io",
         "designation": "API Automation Testing Tool",
         "organization": "https://optimizory.com",

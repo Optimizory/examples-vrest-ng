@@ -6,7 +6,7 @@ pipeline {
     }
   }
   environment {
-    vrest_version = '1.9.2' 
+    vrest_version = '2.1.0' 
     HOME = '.'
   }
   stages {

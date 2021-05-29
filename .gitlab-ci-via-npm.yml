@@ -5,7 +5,7 @@ stages:
 
 # [Use this step] To define the vrest-ng-cli version to be downloaded
 variables:
-  vrest_version: '2.0.0' #vrest-ng-cli version to be downloaded
+  vrest_version: '2.1.0' #vrest-ng-cli version to be downloaded
   npm_config_cache: '$CI_PROJECT_DIR/.npm'
 
 # Cache modules in between jobs

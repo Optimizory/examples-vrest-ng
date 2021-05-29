@@ -10,7 +10,7 @@ pool:
 
 # [Use this step] To define the vrest-ng-cli version to be downloaded
 variables:
-  vrest_version: '2.0.0' #vrest-ng-cli version to be downloaded
+  vrest_version: '2.1.0' #vrest-ng-cli version to be downloaded
 
 steps:
 # [Use this step] To install vrest-ng-cli binary as a npm module
