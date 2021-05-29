@@ -7,7 +7,6 @@ test/ddt-community
 test/demo-project
 test/challenges
 test/zipcode-node
-test/spec-driven
 **/config.json
 test/.gitignore
 test/*.xlsx
