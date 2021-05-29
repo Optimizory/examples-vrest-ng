@@ -1,0 +1,95 @@
+{
+  "details": {
+    "summary": "Validate Create contact API when all fields are valid",
+    "operationId": "addContact",
+    "tags": [
+      "CRUD APIs"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "name": "Dheeraj Aggarwal",
+        "email": "dheeraj.aggarwal@optimizory.com",
+        "designation": "Engineering Manager",
+        "organization": "Optimizory",
+        "country": "India",
+        "aboutMe": "Passionate for making vREST NG, world's #1 API Testing Tool.",
+        "createdOn": "{{*}}",
+        "_id": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/{{$operation}}/responses/200"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": {
+      "content": null,
+      "type": "form-urlencoded",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "Dheeraj Aggarwal"
+        },
+        {
+          "name": "email",
+          "value": "dheeraj.aggarwal@optimizory.com"
+        },
+        {
+          "name": "designation",
+          "value": "Engineering Manager"
+        },
+        {
+          "name": "organization",
+          "value": "Optimizory"
+        },
+        {
+          "name": "country",
+          "value": "India"
+        },
+        {
+          "name": "aboutMe",
+          "value": "Passionate for making vREST NG, world's #1 API Testing Tool."
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  },
+  "variables": [
+    {
+      "name": "contactId",
+      "path": "_id"
+    }
+  ]
+}

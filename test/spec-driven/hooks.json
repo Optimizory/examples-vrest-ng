@@ -1,0 +1,42 @@
+[
+  {
+    "name": "pre-test-run-hook",
+    "hookIds": []
+  },
+  {
+    "name": "pre-test-suite-hook",
+    "hookIds": []
+  },
+  {
+    "name": "pre-test-case-hook",
+    "hookIds": []
+  },
+  {
+    "name": "pre-test-case-iteration-hook",
+    "hookIds": []
+  },
+  {
+    "name": "pre-test-case-local-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-case-local-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-case-iteration-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-case-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-suite-hook",
+    "hookIds": []
+  },
+  {
+    "name": "post-test-run-hook",
+    "hookIds": []
+  }
+]

@@ -2,6 +2,7 @@
 node_modules
 yarn.lock
 db.json
+*.DS_Store
 test/integration-demo
 test/ddt-community
 test/demo-project

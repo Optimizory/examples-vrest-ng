@@ -1,0 +1,64 @@
+{
+  "details": {
+    "summary": "Validate Delete Contact API when contact id is invalid",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "operationId": "deleteContactById",
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "400"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "error": "Contact with id \"507f1f77bcf86cd799439011\" not found."
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/{{$operation}}/responses/400"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{invalidContactId}}",
+    "method": "DELETE",
+    "headers": {},
+    "queryParams": [],
+    "body": {
+      "content": {},
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "extensions": {
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  }
+}

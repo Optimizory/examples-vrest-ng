@@ -1,0 +1,58 @@
+{
+  "contacts": [
+    {
+      "_id": "5de0bf804e576dc4e5f4b984",
+      "name": "Dheeraj Kumar Aggarwal",
+      "email": "dheeraj.aggarwal@optimizory.com",
+      "designation": "Engineering Manager",
+      "organization": "Optimizory Technologies Pvt. Ltd.",
+      "country": "India",
+      "aboutMe": "Passionate to learn and innovate new ideas and do every piece of work with a degree of excellence and try best to bring ideas into life. My hobbies are Yoga and Kalaripayattu. I am currently working on vREST NG (https://ng.vrest.io).",
+      "linkedInId": "aggarwaldheeraj",
+      "githubId": "dheerajaggarwal",
+      "facebookId": "dheeraj.aggarwal",
+      "twitterId": "dheerajaggarwal",
+      "createdOn": "2020-01-03T10:35:11.122Z"
+    },
+    {
+      "_id": "5de0bf804e5461ede5f4b681",
+      "name": "Lindsey Okelley",
+      "email": "lindsey.okelley@example.com",
+      "designation": "Product Evangelist",
+      "organization": "Example.com",
+      "country": "India",
+      "aboutMe": "This is about me section ...",
+      "linkedInId": "lindsey.okelley",
+      "githubId": "lindsey.okelley",
+      "facebookId": "lindsey.okelley",
+      "twitterId": "lindsey.okelley",
+      "createdOn": "2020-01-03T10:38:46.463Z"
+    },
+    {
+      "_id": "5de0bf804e577dc5e5e4b082",
+      "name": "Lorette Cuffie",
+      "email": "lorette.cuffie@example.com",
+      "designation": "Software Engineer",
+      "organization": "Example.com",
+      "country": "US",
+      "aboutMe": "This is about me section ...",
+      "githubId": "",
+      "facebookId": "lorette.cuffie",
+      "twitterId": "lorette.cuffie",
+      "createdOn": "2020-01-03T10:38:46.463Z"
+    },
+    {
+      "_id": "5de0bf804e5c11c425f3b578",
+      "name": "Nila Ready",
+      "email": "nila.ready@example.com",
+      "designation": "Sr. Software Engineer",
+      "organization": "Example.com",
+      "country": "India",
+      "aboutMe": "About me Section ...",
+      "githubId": "nila.ready",
+      "facebookId": "",
+      "twitterId": "nila.ready",
+      "createdOn": "2020-01-03T10:38:46.463Z"
+    }
+  ]
+}

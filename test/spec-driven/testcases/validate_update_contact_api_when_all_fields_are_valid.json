@@ -1,0 +1,104 @@
+{
+  "details": {
+    "summary": "Validate Update contact API when all fields are valid",
+    "description": "",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "operationId": "updateContactById",
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "_id": "{{*}}",
+        "name": "Dheeraj Aggarwal",
+        "email": "dheeraj.aggarwal@optimizory.com",
+        "designation": "Engineering Manager",
+        "organization": "Optimizory",
+        "country": "India",
+        "aboutMe": "Passionate for making vREST NG, world's #1 API Testing Tool.",
+        "linkedInId": "aggarwaldheeraj",
+        "githubId": "dheerajaggarwal",
+        "facebookId": "dheeraj.aggarwal",
+        "twitterId": "dheerajaggarwal",
+        "createdOn": "{{*}}"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/{{$operation}}/responses/200"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{validContactId}}",
+    "method": "PUT",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "queryParams": [],
+    "body": {
+      "content": null,
+      "type": "form-urlencoded",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "Dheeraj Aggarwal"
+        },
+        {
+          "name": "email",
+          "value": "dheeraj.aggarwal@optimizory.com"
+        },
+        {
+          "name": "designation",
+          "value": "Engineering Manager"
+        },
+        {
+          "name": "organization",
+          "value": "Optimizory"
+        },
+        {
+          "name": "country",
+          "value": "India"
+        },
+        {
+          "name": "aboutMe",
+          "value": "Passionate for making vREST NG, world's #1 API Testing Tool."
+        }
+      ]
+    }
+  },
+  "variables": [],
+  "extensions": {
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  },
+  "$data": {}
+}

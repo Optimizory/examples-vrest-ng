@@ -1,0 +1,75 @@
+{
+  "details": {
+    "summary": "Validate Find Contact API when contact id is valid",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "operationId": "findContactById",
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "_id": "5de0bf804e576dc4e5f4b984",
+        "name": "Dheeraj Kumar Aggarwal",
+        "email": "dheeraj.aggarwal@optimizory.com",
+        "designation": "Engineering Manager",
+        "organization": "Optimizory Technologies Pvt. Ltd.",
+        "country": "India",
+        "aboutMe": "Passionate to learn and innovate new ideas and do every piece of work with a degree of excellence and try best to bring ideas into life. My hobbies are Yoga and Kalaripayattu. I am currently working on vREST NG (https://ng.vrest.io).",
+        "linkedInId": "aggarwaldheeraj",
+        "githubId": "dheerajaggarwal",
+        "facebookId": "dheeraj.aggarwal",
+        "twitterId": "dheerajaggarwal",
+        "createdOn": "2020-01-03T10:35:11.122Z"
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/{{$operation}}/responses/200"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts/{{validContactId}}",
+    "method": "GET",
+    "headers": {},
+    "queryParams": [],
+    "body": {
+      "content": {},
+      "type": "json",
+      "formParams": []
+    }
+  },
+  "variables": [],
+  "extensions": {
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  }
+}

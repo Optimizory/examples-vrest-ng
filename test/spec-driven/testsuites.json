@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Create Contact API",
+    "description": "",
+    "testCaseIds": [
+      "create_contact_api_name_field_blank",
+      "create_contact_api_when_name_field_greater_than_limit",
+      "validate_create_contact_api_when_designation_field_is_greater_than_the_limit",
+      "validate_create_contact_api_when_organization_field_is_greater_than_the_limit",
+      "validate_create_contact_api_when_country_field_is_greater_than_the_limit",
+      "validate_create_contact_api_when_all_fields_are_valid"
+    ]
+  },
+  {
+    "name": "Update Contact API",
+    "description": null,
+    "testCaseIds": [
+      "validate_update_contact_api_when_name_field_is_blank",
+      "validate_update_contact_api_when_name_field_is_greater_than_the_limit",
+      "validate_update_contact_api_when_designation_field_is_greater_than_the_limit",
+      "validate_update_contact_api_when_organization_field_is_greater_than_the_limit",
+      "validate_update_contact_api_when_country_field_is_greater_than_the_limit",
+      "validate_update_contact_api_when_all_fields_are_valid"
+    ]
+  },
+  {
+    "name": "Find Contact API",
+    "description": null,
+    "testCaseIds": [
+      "validate_find_contact_api_when_contact_id_is_invalid",
+      "validate_find_contact_api_when_contact_id_is_valid"
+    ]
+  },
+  {
+    "name": "Delete Contact API",
+    "description": null,
+    "testCaseIds": [
+      "validate_delete_contact_api_when_contact_id_is_invalid",
+      "validate_delete_contact_api_when_contact_id_is_valid"
+    ]
+  },
+  {
+    "name": "Sandbox",
+    "description": null,
+    "testCaseIds": []
+  }
+]

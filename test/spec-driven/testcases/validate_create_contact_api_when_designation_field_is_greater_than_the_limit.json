@@ -1,0 +1,94 @@
+{
+  "details": {
+    "summary": "Validate Create contact API when designation field is greater than the limit",
+    "description": "",
+    "externalId": "",
+    "condition": "",
+    "loopSource": "",
+    "waitForSeconds": null,
+    "runnable": true,
+    "editable": true,
+    "operationId": "addContact",
+    "tags": [
+      "CRUD APIs"
+    ],
+    "authorizationId": null
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "400"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedBody": {
+      "content": {
+        "errors": {
+          "designation": "field length cannot be greater than 35"
+        }
+      },
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/{{$operation}}/responses/400"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "queryParams": [],
+    "body": {
+      "content": null,
+      "type": "form-urlencoded",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "John Doe"
+        },
+        {
+          "name": "email",
+          "value": "john.doe@example.com"
+        },
+        {
+          "name": "designation",
+          "value": "Sample designation whose length is greater than the limit"
+        },
+        {
+          "name": "organization",
+          "value": "example.com"
+        },
+        {
+          "name": "country",
+          "value": "India"
+        },
+        {
+          "name": "aboutMe",
+          "value": "Passionate for making vREST NG, world's #1 API Testing Tool."
+        }
+      ]
+    }
+  },
+  "variables": [],
+  "extensions": {
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  }
+}
