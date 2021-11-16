@@ -34,7 +34,7 @@ The `test` directory contains the following sample **vREST NG** projects which y
 ![vREST NG - Scenario Testing Example](assets/scenario-tests.png)
 *vREST NG - Scenario Testing Example*
 
-3. `tests-using-npm-packages`: This is a project written by vREST NG application to demonstrate how you may import `npm` packages to extend the power of vREST NG Application. For more information, read this [guide link](https://ng.vrest.io/docs/app/utility-methods.html#importing-npm-packages-in-utility-methods).
+3. `tests-using-npm-packages`: This is a project written by vREST NG application to demonstrate how you may import `npm` packages to extend the power of vREST NG Application. For more information, read this [guide link](https://vrest.io/docs/app/utility-methods.html#importing-npm-packages-in-utility-methods).
 ![vREST NG - Use of NPM Package `moment`](assets/use-of-npm-package.png)
 *vREST NG - Use of NPM Package Example*
 
