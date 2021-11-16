@@ -1,4 +1,5 @@
 var express = require('express'),
+  cors = require('cors'),
   bodyParser = require("body-parser"),
   path = require('path'),
   http = require('http'),
@@ -12,6 +13,8 @@ var app = express(),
 if (baseURL.indexOf('prod') !== -1) {
   instanceType = 'Production';
 }
+
+app.use(cors());
 
 app.locals.baseURL = baseURL;
 app.locals.instanceType = instanceType;

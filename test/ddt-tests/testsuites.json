@@ -3,7 +3,9 @@
     "name": "Test Suite - CRUD APIs",
     "description": "CRUD APIs",
     "testCaseIds": [
-      "create_contact_api_test",
+      "create_contact_api_test_form_params",
+      "create_api_request_body_multiple_columns",
+      "create_api_request_body_single_column",
       "find_contact_api_test",
       "update_contact_api_test",
       "delete_contact_api_test"

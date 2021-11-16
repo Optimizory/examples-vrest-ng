@@ -1,4 +1,4 @@
-# Sample Test Application to demonstrate [vREST NG](https://ng.vrest.io). #
+# Sample Test Application to demonstrate [vREST NG](https://vrest.io). #
 
 Sample Test Application "**Contacts**" is a CRUD application built with with [Backbone.js](https://backbonejs.org/), [Bootstrap](https://getbootstrap.com/), [Node.js](https://nodejs.org/), [ExpressJS](https://expressjs.com/), and [LowDB](https://github.com/typicode/lowdb).
 
@@ -24,7 +24,7 @@ The application allows you to browse through a **list of contacts**, as well as 
 
 ## Sample Projects written by vREST NG ##
 
-The `test` directory contains the following sample **vREST NG** projects which you may drag in [vREST NG Application workspace area](https://ng.vrest.io/docs/app/new-user.html) to see the test cases.
+The `test` directory contains the following sample **vREST NG** projects which you may drag in [vREST NG Application workspace area](https://vrest.io/docs/app/new-user.html) to see the test cases.
 
 1. `ddt-tests`: This is a project written by vREST NG application to demonstrate the Data driven testing capability of vREST NG.
 ![vREST NG - Data Driven Testing Example](assets/ddt-tests.png)

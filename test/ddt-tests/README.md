@@ -17,7 +17,7 @@ Let us see how you can do that,
 
 ## Step 1 - Download & Install vREST NG
 * First of all, you need to have vREST NG Application installed on your system.
-* Download it from our [website](https://ng.vrest.io) (for your OS).
+* Download it from our [website](https://vrest.io) (for your OS).
 
 ## Step 2 - Clone this repository & run the sample test application
 * You can clone this entire repository and keep it anywhere you want in your system. 
@@ -25,7 +25,7 @@ Let us see how you can do that,
 
 ## Step 3 - Open this `ddt-tests` directory as a Project in vREST NG
 * Just add this project directory `ddt-tests` in your vREST NG Workspace.
-* For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
+* For more information on setting up project, you may look at this [guide link](https://vrest.io/docs/app/new-user.html).
 
 ![](../../assets/setup-project.png)
 
@@ -64,4 +64,4 @@ This way you can separate the work of writing Test Data and Automation Logic, ev
     * **Minimization of Test Cases**: You will have a very limited number of relevant test cases left, because now you don't have to create an individual test case for each type of test data input.
     * **Easy to make Changes**: Making changes in data becomes very easy because you just need to make changes in a data document (Excel Sheet, .numbers, .csv files), and you are not concerned with the test logic at all.
 
-If you want to learn more about Data Driven Testing, then follow this [link](https://ng.vrest.io/docs/app/methodologies/data-driven-testing.html).
+If you want to learn more about Data Driven Testing, then follow this [link](https://vrest.io/docs/app/methodologies/data-driven-testing.html).

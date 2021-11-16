@@ -21,30 +21,11 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - in: "formData"
-        type: "string"
-        name: "name"
-        description: "Contact Name"
-      - in: "formData"
-        type: "string"
-        name: "email"
-        description: "Contact Email"
-      - in: "formData"
-        type: "string"
-        name: "designation"
-        description: "Contact Designation"
-      - in: "formData"
-        type: "string"
-        name: "organization"
-        description: "Organization Information"
-      - in: "formData"
-        type: "string"
-        name: "country"
-        description: "Country Information"
-      - in: "formData"
-        type: "string"
-        name: "aboutMe"
-        description: "AboutMe Information"
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/ContactWithoutId"
       responses:
         400:
           description: "Invalid Input"

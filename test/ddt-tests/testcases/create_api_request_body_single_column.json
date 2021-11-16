@@ -1,0 +1,90 @@
+{
+  "details": {
+    "summary": "Create API - JSON request body single column",
+    "loopSource": "{{data}}",
+    "tags": [
+      "CRUD APIs"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "{{data.$.statusCode}}"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Validator"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "jsonBody",
+        "property": "name",
+        "operator": "equals",
+        "expectedValue": "{{data.$.expectedName}}"
+      },
+      {
+        "source": "jsonBody",
+        "property": "hello",
+        "operator": "equals",
+        "expectedValue": "$$skip"
+      }
+    ],
+    "expectedBody": {
+      "content": "{{data.$.expectedBody}}",
+      "type": "json"
+    },
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/definitions/{{data.$.expectedSchema}}"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "{{baseURL}}/contacts",
+    "method": "POST",
+    "body": {
+      "content": "{{data.$.requestBody}}",
+      "type": "json",
+      "formParams": [
+        {
+          "name": "name",
+          "value": "{{data.$.name}}"
+        },
+        {
+          "name": "email",
+          "value": "{{data.$.email}}"
+        },
+        {
+          "name": "designation",
+          "value": "{{data.$.designation}}"
+        },
+        {
+          "name": "organization",
+          "value": "{{data.$.organization}}"
+        },
+        {
+          "name": "country",
+          "value": "{{data.$.country}}"
+        },
+        {
+          "name": "aboutMe",
+          "value": "{{data.$.aboutMe}}"
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "vrest-excel-plugin": {
+      "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact_single_request_body_column.csv"
+    },
+    "vrest-command-executor-plugin": {
+      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+    }
+  }
+}
