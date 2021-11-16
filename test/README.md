@@ -4,7 +4,7 @@ You may just import any of these sample projects in vREST NG application to quic
 
 ## Step 1 - Download & Install vREST NG
 * First of all, you need to have vREST NG Application installed on your system.
-* Download it from our [website](https://ng.vrest.io) (for your OS).
+* Download it from our [website](https://vrest.io) (for your OS).
 
 ## Step 2 - Clone this repository & run the sample test application
 * You can clone this entire repository and keep it anywhere you want in your system. 
@@ -12,7 +12,7 @@ You may just import any of these sample projects in vREST NG application to quic
 
 ## Step 3 - Open any of the sample project directory as a Project in vREST NG
 * Just add any of the project directory in your vREST NG Workspace area.
-* For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
+* For more information on setting up project, you may look at this [guide link](https://vrest.io/docs/app/new-user.html).
 
 ![](../assets/setup-project.png)
 

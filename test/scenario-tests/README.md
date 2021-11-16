@@ -12,7 +12,7 @@ Let us see how you can do that,
 
 ## Step 1 - Download & Install vREST NG
 * First of all, you need to have vREST NG Application installed on your system.
-* Download it from our [website](https://ng.vrest.io) (for your OS).
+* Download it from our [website](https://vrest.io) (for your OS).
 
 ## Step 2 - Clone this repository & run the sample test application
 * You can clone this entire repository and keep it anywhere you want in your system. 
@@ -20,7 +20,7 @@ Let us see how you can do that,
 
 ## Step 3 - Open this `scenario-tests` directory as a Project in vREST NG
 * Just add this project directory `scenario-tests` in your vREST NG Workspace.
-* For more information on setting up project, you may look at this [guide link](https://ng.vrest.io/docs/app/new-user.html).
+* For more information on setting up project, you may look at this [guide link](https://vrest.io/docs/app/new-user.html).
 
 ![](../../assets/setup-project.png)
 
@@ -29,4 +29,4 @@ Let us see how you can do that,
 ## Step 4 - Run the tests
 * Now you can click on "Run All" button available in left pane to run all the test cases.
 
-For more information on how you may chain multiple API requests to validate a complex scenario, please visit this [**guide link**](https://ng.vrest.io/docs/app/variables/extract-variables-from-api-response.html). 
+For more information on how you may chain multiple API requests to validate a complex scenario, please visit this [**guide link**](https://vrest.io/docs/app/variables/extract-variables-from-api-response.html). 
