@@ -4,7 +4,8 @@
     "loopSource": "{{data}}",
     "tags": [
       "CRUD APIs"
-    ]
+    ],
+    "description": "Learn more at:\nhttps://vrest.io/docs/app/methodologies/data-driven-testing.html"
   },
   "validation": {
     "assertions": [
