@@ -1,0 +1,49 @@
+iterationSummary,requestBody,expectedName,statusCode,expectedSchema,expectedBody
+Validate create API when name field is blank,"{
+  ""name"": """",
+  ""email"": ""{{fakeEmail}}"",
+  ""designation"": ""Chief Technical Officer"",
+  ""organization"": ""example.com"",
+  ""country"": ""India"",
+  ""aboutMe"": """"
+}",$$skip,400,Error,"{""errors"":{""name"":""required field""}}"
+Validate create API when name field length is greater than the limit,"{
+  ""name"": ""Sample Name whose length is greater than the limit"",
+  ""email"": ""{{fakeEmail}}"",
+  ""designation"": ""Chief Technical Officer"",
+  ""organization"": ""example.com"",
+  ""country"": ""India"",
+  ""aboutMe"": """"
+}",$$skip,400,Error,"{""errors"":{""name"":""field length cannot be greater than 35""}}"
+Validate create API when designation field is greater than the limit,"{
+  ""name"": ""{{getRandom()}}"",
+  ""email"": ""{{fakeEmail}}"",
+  ""designation"": ""Sample designation whose length is greater than the limit"",
+  ""organization"": ""example.com"",
+  ""country"": ""India"",
+  ""aboutMe"": """"
+}",$$skip,400,Error,"{""errors"":{""designation"":""field length cannot be greater than 35""}}"
+Validate create API when organisation field is greater than the limit,"{
+  ""name"": ""{{getRandom()}}"",
+  ""email"": ""{{fakeEmail}}"",
+  ""designation"": ""Chief Technical Officer"",
+  ""organization"": ""Sample organisation whose length is greater than the limit"",
+  ""country"": ""India"",
+  ""aboutMe"": """"
+}",$$skip,400,Error,"{""errors"":{""organization"":""field length cannot be greater than 35""}}"
+Validate create API when country field is greater than the limit,"{
+  ""name"": ""{{getRandom()}}"",
+  ""email"": ""{{fakeEmail}}"",
+  ""designation"": ""Chief Technical Officer"",
+  ""organization"": ""example.com"",
+  ""country"": ""Sample country whose length is greater than the limit"",
+  ""aboutMe"": """"
+}",$$skip,400,Error,"{""errors"":{""country"":""field length cannot be greater than 35""}}"
+Validate create API when all fields are valid,"{
+  ""name"": ""Dheeraj Aggarwal"",
+  ""email"": ""dheeraj.aggarwal@optimizory.com"",
+  ""designation"": ""Engineering Manager"",
+  ""organization"": ""Optimizory"",
+  ""country"": ""India"",
+  ""aboutMe"": ""Passionate for making vREST NG, world's #1 API Testing Tool.""
+}",Dheeraj Aggarwal,200,Contact,"{""name"":""Dheeraj Aggarwal"",""email"":""dheeraj.aggarwal@optimizory.com"",""designation"":""Engineering Manager"",""organization"":""Optimizory"",""country"":""India"",""aboutMe"":""Passionate for making vREST NG, world's #1 API Testing Tool."",""createdOn"":""{{*}}"",""_id"":""{{*}}""}"
