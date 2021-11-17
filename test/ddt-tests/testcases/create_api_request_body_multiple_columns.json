@@ -91,7 +91,7 @@
       "testDataFilePath": "{{$projectDir}}/data/create_a_new_contact.xlsx"
     },
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+      "executionCommand": "{{cpCmd}} {{fixPath('/dump.json')}} {{fixPath('/../../db.json')}}"
     }
   }
 }

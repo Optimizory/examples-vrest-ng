@@ -75,7 +75,7 @@
       "testDataFilePath": "{{$projectDir}}/data/update_contact_by_id.csv"
     },
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+      "executionCommand": "{{cpCmd}} {{fixPath('/dump.json')}} {{fixPath('/../../db.json')}}"
     }
   }
 }
