@@ -1,17 +1,10 @@
 {
   "details": {
     "summary": "Validate Find Contact API when contact id is valid",
-    "externalId": "",
-    "condition": "",
-    "loopSource": "",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "operationId": "findContactById",
     "tags": [
       "CRUD APIs"
-    ],
-    "authorizationId": null
+    ]
   },
   "validation": {
     "assertions": [
@@ -29,6 +22,12 @@
         "property": null,
         "operator": "Default Validator",
         "expectedValue": ""
+      },
+      {
+        "source": "request",
+        "property": null,
+        "operator": "validateRequestSchema",
+        "expectedValue": null
       }
     ],
     "expectedBody": {
@@ -57,16 +56,8 @@
   },
   "request": {
     "url": "{{baseURL}}/contacts/{{validContactId}}",
-    "method": "GET",
-    "headers": {},
-    "queryParams": [],
-    "body": {
-      "content": {},
-      "type": "json",
-      "formParams": []
-    }
+    "method": "GET"
   },
-  "variables": [],
   "extensions": {
     "vrest-command-executor-plugin": {
       "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"

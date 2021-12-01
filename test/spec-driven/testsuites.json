@@ -5,6 +5,7 @@
     "testCaseIds": [
       "create_contact_api_name_field_blank",
       "create_contact_api_when_name_field_greater_than_limit",
+      "create_contact_api_when_invalid_email_is_provided",
       "validate_create_contact_api_when_designation_field_is_greater_than_the_limit",
       "validate_create_contact_api_when_organization_field_is_greater_than_the_limit",
       "validate_create_contact_api_when_country_field_is_greater_than_the_limit",

@@ -22,6 +22,12 @@
         "property": null,
         "operator": "Default Validator",
         "expectedValue": ""
+      },
+      {
+        "source": "request",
+        "property": null,
+        "operator": "validateRequestSchema",
+        "expectedValue": null
       }
     ],
     "expectedBody": {

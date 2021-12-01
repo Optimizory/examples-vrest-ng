@@ -1,6 +1,6 @@
 {
   "details": {
-    "summary": "Validate Create contact API when name field is greater than the limit",
+    "summary": "Validate Create contact API when invalid email is provided",
     "operationId": "addContact",
     "tags": [
       "CRUD APIs"
@@ -33,7 +33,7 @@
     "expectedBody": {
       "content": {
         "errors": {
-          "name": "field length cannot be greater than 35"
+          "email": "Email Id is not valid."
         }
       },
       "type": "json"
@@ -45,7 +45,7 @@
       "type": "json"
     },
     "ignoreRequestFields": [
-      "formData.name"
+      "formData.email"
     ]
   },
   "request": {
@@ -60,11 +60,11 @@
       "formParams": [
         {
           "name": "name",
-          "value": "Sample Name whose length is greater than the limit"
+          "value": "John Doe"
         },
         {
           "name": "email",
-          "value": "john.doe@example.com"
+          "value": "invalid_email"
         },
         {
           "name": "designation",

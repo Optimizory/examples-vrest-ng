@@ -25,22 +25,29 @@ paths:
         type: "string"
         name: "name"
         description: "Contact Name"
+        required: true
+        minLength: 1
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "email"
+        format: "email"
         description: "Contact Email"
       - in: "formData"
         type: "string"
         name: "designation"
         description: "Contact Designation"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "organization"
         description: "Organization Information"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "country"
         description: "Country Information"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "aboutMe"
@@ -96,22 +103,28 @@ paths:
         type: "string"
         name: "name"
         description: "Contact Name"
+        minLength: 1
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "email"
         description: "Contact Email"
+        format: "email"
       - in: "formData"
         type: "string"
         name: "designation"
         description: "Contact Designation"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "organization"
         description: "Organization Information"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "country"
         description: "Country Information"
+        maxLength: 35
       - in: "formData"
         type: "string"
         name: "aboutMe"
@@ -137,7 +150,7 @@ paths:
         in: "path"
         description: "ID of contact to delete"
         required: true
-        type: "string"
+        type: string
       responses:
         200:
           description: "successful operation"
@@ -147,7 +160,7 @@ paths:
             $ref: '#/definitions/Error'
 definitions:
   ContactWithoutId:
-    type: "object"
+    type: object
     properties:
       name:
         type: string
@@ -174,7 +187,7 @@ definitions:
     type: object
     properties:
       _id:
-        type: "string"
+        type: string
       name:
         type: string
       email:

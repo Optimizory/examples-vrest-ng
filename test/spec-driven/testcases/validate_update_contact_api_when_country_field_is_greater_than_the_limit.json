@@ -1,18 +1,10 @@
 {
   "details": {
     "summary": "Validate Update contact API when country field is greater than the limit",
-    "description": "",
-    "externalId": "",
-    "condition": "",
-    "loopSource": "",
-    "waitForSeconds": null,
-    "runnable": true,
-    "editable": true,
     "operationId": "updateContactById",
     "tags": [
       "CRUD APIs"
-    ],
-    "authorizationId": null
+    ]
   },
   "validation": {
     "assertions": [
@@ -30,6 +22,12 @@
         "property": null,
         "operator": "Default Validator",
         "expectedValue": ""
+      },
+      {
+        "source": "request",
+        "property": null,
+        "operator": "validateRequestSchema",
+        "expectedValue": null
       }
     ],
     "expectedBody": {
@@ -45,7 +43,10 @@
         "$ref": "#/{{$operation}}/responses/400"
       },
       "type": "json"
-    }
+    },
+    "ignoreRequestFields": [
+      "formData.country"
+    ]
   },
   "request": {
     "url": "{{baseURL}}/contacts/{{validContactId}}",
@@ -53,7 +54,6 @@
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "queryParams": [],
     "body": {
       "content": null,
       "type": "form-urlencoded",
@@ -85,7 +85,6 @@
       ]
     }
   },
-  "variables": [],
   "extensions": {
     "vrest-command-executor-plugin": {
       "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
