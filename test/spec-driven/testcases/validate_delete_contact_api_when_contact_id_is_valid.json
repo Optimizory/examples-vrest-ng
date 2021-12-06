@@ -43,7 +43,7 @@
   },
   "extensions": {
     "vrest-command-executor-plugin": {
-      "executionCommand": "{{cpCmd}} {{$projectDir}}/dump.json {{$projectDir}}/../../db.json"
+      "executionCommand": "{{cpCmd}} {{fixPath('/dump.json')}} {{fixPath('/../../db.json')}}"
     }
   }
 }
