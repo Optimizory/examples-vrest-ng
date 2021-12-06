@@ -45,7 +45,7 @@
       "type": "json"
     },
     "ignoreRequestFields": [
-      "formData.designation"
+      "body.designation"
     ]
   },
   "request": {
