@@ -31,14 +31,17 @@ Let us see how you can do that,
 
 * Now, you can explore this Project on your own.
 
-## Step 4 - Enjoy the live editing of CSV file
+## Step 4 - Switch the environment
+* If you are working in Windows machine, then just switch the environment to `Windows` in the vREST NG application for this project.
+* Otherwise keep the `default` environment.
+
+## Step 5 - Enjoy the live editing of CSV file
 * You may find the multiple CSV files inside the `data` directory. 
 * Now you can make changes and simply save the csv file. The changes will get automatically reflected in vREST NG without any refresh or upload.
 * Now you can click on ![](../../assets/run-button.png) button available in left pane to run all the test cases.
 
 Below is the sample screenshot of one of the CSV file:
 ![](../../assets/excel-sheet.png)
-
 
 
 ## Benefits of Data Driven Testing
@@ -65,3 +68,8 @@ This way you can separate the work of writing Test Data and Automation Logic, ev
     * **Easy to make Changes**: Making changes in data becomes very easy because you just need to make changes in a data document (Excel Sheet, .numbers, .csv files), and you are not concerned with the test logic at all.
 
 If you want to learn more about Data Driven Testing, then follow this [link](https://vrest.io/docs/app/methodologies/data-driven-testing.html).
+
+## Frequently asked questions
+1. I am getting `Access Denied` error while executing the sample data driven tests:
+
+Our sample application uses a file based database. So in order to initialize the database state, vREST NG executes the `copy`/`cp` command to restore the database state before execution of every test. If you clone this repository in a directory, where vREST NG don't have access to change files then you will face such issue.
