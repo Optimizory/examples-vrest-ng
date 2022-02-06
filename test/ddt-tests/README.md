@@ -72,4 +72,4 @@ If you want to learn more about Data Driven Testing, then follow this [link](htt
 ## Frequently asked questions
 1. I am getting `Access Denied` error while executing the sample data driven tests:
 
-Our sample application uses a file based database. So in order to initialize the database state, vREST NG executes the `copy`/`cp` command to restore the database state before execution of every test. If you clone this repository in a directory, where vREST NG don't have access to change files then you will face such issue.
+Our sample application uses a simple file based database. So in order to initialize the database state, vREST NG executes the `copy`/`cp` command to restore the database state before execution of every test. This command is written in the `Details` tab > `Execute command` field of every test. If you clone this repository in a directory, where vREST NG process don't have necessary permissions to change files then you will face such issue.
