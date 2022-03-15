@@ -1,0 +1,27 @@
+{
+  "details": {
+    "summary": "Log JIRA Issue or add comment on Test Failure",
+    "description": "This is just a dummy hook to execute the utility method `logIssueOrComment`.",
+    "condition": "{{logIssueOrComment()}}"
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "greaterThanOrEqualTo",
+        "expectedValue": "200"
+      },
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "lessThan",
+        "expectedValue": "300"
+      }
+    ]
+  },
+  "request": {
+    "url": "http://",
+    "method": "GET"
+  }
+}

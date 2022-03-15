@@ -1,0 +1,20 @@
+{
+  "details": {
+    "summary": "Failure Test Case",
+    "externalId": "TP1-9"
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "201"
+      }
+    ]
+  },
+  "request": {
+    "url": "http://example.com",
+    "method": "GET"
+  }
+}

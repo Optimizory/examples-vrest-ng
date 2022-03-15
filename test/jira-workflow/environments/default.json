@@ -1,0 +1,9 @@
+{
+  "jiraBaseURL": "https://jira.atlassian.net",
+  "jiraAssigneeName": "admin",
+  "jiraProjectKey": "PRJ",
+  "jiraUsername": "admin@example.com",
+  "jiraApiToken": "jira-api-token",
+  "jiraHookEnv": "default",
+  "jiraClosedStatusName": "Done"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Test Suite 1",
+    "description": "",
+    "testCaseIds": [
+      "failure_test_case"
+    ]
+  }
+]
