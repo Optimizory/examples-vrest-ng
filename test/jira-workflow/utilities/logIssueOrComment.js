@@ -31,7 +31,6 @@
   
 	var aFunction = function(){
 	  //modify the condition as per your needs
-	  console.log(this.variables.$tc.result.isExecuted, !this.variables.$tc.result.isPassed, this.variables.$tr.details.environment, this.variables.jiraHookEnv);
 	  if(this.variables.$tc.result.isExecuted && !this.variables.$tc.result.isPassed && 
 	    this.variables.$tr.details.environment === this.variables.jiraHookEnv) {
 	      
@@ -40,9 +39,7 @@
       return new Promise(function(resolve, reject){
         return promiseFunc.call(self, resolve, reject);
       });  
-      
 	  } else {
-	    
 	    console.log("Hook condition failed.");
 	    return false;
 	  }

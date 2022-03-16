@@ -39,7 +39,7 @@
     
     //remove the temporary file
     fs.unlink(filePath, function(err){
-      if(!err) console.log("file removed.");
+      if(!err) console.log("Temporary attachment file removed.");
     });
     
 		return filename;
