@@ -6,7 +6,7 @@ This sample project describes, how you may enable NTLM v2 authentication in vRES
 NodeJS 12.18.3 or later
 
 #### Steps to try out this project directly
-1. First download the whole repository `examples-vrest-ng` and extract the directory `test/ntlm-v2`, wherever you want. We are only concerned about this directory `ntlm-v2` as of now.
+1. First download the whole repository `examples-vrest-ng` and extract the directory `test/ntlm-v2`, wherever you want. We are only concerned about this directory `ntlm-v2` as of now, instead of whole repository.
 2. Open this directory `ntlm-v2` in a command prompt or terminal and run the command below:
 `npm install`
 3. Now add this project directory `ntlm-v2` in vREST NG Application's workspace area.
