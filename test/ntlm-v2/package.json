@@ -1,0 +1,14 @@
+{
+  "name": "vrest-prj-with-ntlm-auth",
+  "description": "vREST NG Project using the NTLMv2 Authentication",
+  "version": "1.0.0",
+  "keywords": [
+    "vREST NG",
+    "npm",
+    "utility methods",
+    "ntlm auth"
+  ],
+  "dependencies": {
+    "@ewsjs/ntlm-client": "1.0.0"
+  }
+}

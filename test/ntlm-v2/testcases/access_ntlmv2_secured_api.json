@@ -1,0 +1,19 @@
+{
+  "details": {
+    "summary": "Access NTLMv2 secured API"
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      }
+    ]
+  },
+  "request": {
+    "url": "{{securedEndpoint}}",
+    "method": "GET"
+  }
+}

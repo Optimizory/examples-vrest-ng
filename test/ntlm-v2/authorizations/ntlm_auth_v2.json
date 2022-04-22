@@ -1,0 +1,10 @@
+{
+  "name": "NTLM Auth",
+  "headerName": "authorization",
+  "authType": "Raw",
+  "details": {
+    "default": {
+      "authHeader": "{{generateNTLMAuthHeader()}}"
+    }
+  }
+}

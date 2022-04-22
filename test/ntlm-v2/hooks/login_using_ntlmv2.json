@@ -1,0 +1,26 @@
+{
+  "details": {
+    "summary": "Login using NTLM",
+    "authorizationId": "ntlm_auth_v2"
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "greaterThanOrEqualTo",
+        "expectedValue": "200"
+      },
+      {
+        "source": "statusCode",
+        "property": null,
+        "operator": "lessThan",
+        "expectedValue": "300"
+      }
+    ]
+  },
+  "request": {
+    "url": "{{securedEndpoint}}",
+    "method": "GET"
+  }
+}
