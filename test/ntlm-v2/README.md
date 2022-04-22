@@ -8,7 +8,7 @@ NodeJS 12.18.3 or later
 #### Steps to try out this project directly
 1. First download the whole repository `examples-vrest-ng` and extract the directory `test/ntlm-v2`, wherever you want. We are only concerned about this directory `ntlm-v2` as of now, instead of whole repository.
 2. Open this directory `ntlm-v2` in a command prompt or terminal and run the command below:
-`npm install`
+```npm install```
 3. Now add this project directory `ntlm-v2` in vREST NG Application's workspace area.
 4. Now configure the following environment variables in the `Configuration tab` > `Environments / Variables` section.:
 
@@ -42,7 +42,7 @@ To apply NTLM v2 auth in your own project, you will need to copy / paste certain
 4. Define the variables named as `username`, `password`, `domain`, `workstation`, `securedEndpoint` in your project as well and configure the desired values.
 5. Copy `authorizations/ntlm_auth_v2.json` to your project at the same location.
 6. You will need to run the following command in the command prompt/terminal window for your project as well:
-`npm install`
+```npm install```
 7. Now, in your API tests, you don't need to set this authorization `NTLM Auth`.
 
 That's it.
